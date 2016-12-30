@@ -1,0 +1,7 @@
+{
+  "generator-jhipster:3.12.1": {
+    "promptValues": {
+      "packageName": "com.konon.libsupport"
+    }
+  }
+}

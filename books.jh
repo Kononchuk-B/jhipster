@@ -1,0 +1,40 @@
+entity Feedback {
+	stars Integer required min(1) max(5),
+	dateOfPublish LocalDate required,
+    description String minlength(10) maxlength(255) 
+}
+entity Book {
+	name String required,
+	author String,
+    edition String,
+    numberOfPages Integer,
+    yearOfPublish LocalDate,
+    isAvailable Boolean
+}
+entity BookCopy {
+	dateOfSupply LocalDate required
+}
+entity BookReservation {
+	startDate LocalDate required,
+    endDate LocalDate required
+}
+enum Gender {
+	MALE, FEMALE
+}
+
+relationship OneToMany {
+    Book{bookReservation} to BookReservation{book},
+    Book{bookCopy} to BookCopy{book},
+    Book{feedback} to Feedback{book}
+}
+
+paginate Book, Feedback, BookReservation, BookCopy with infinite-scroll
+dto * with mapstruct
+service all with serviceImpl
+
+
+
+
+
+
+
