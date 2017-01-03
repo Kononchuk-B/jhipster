@@ -3,6 +3,8 @@ package com.konon.libsupport.web.rest;
 import com.konon.libsupport.LibSupportApp;
 
 import com.konon.libsupport.domain.Feedback;
+import com.konon.libsupport.domain.Book;
+import com.konon.libsupport.domain.User;
 import com.konon.libsupport.repository.FeedbackRepository;
 import com.konon.libsupport.service.FeedbackService;
 
@@ -89,6 +91,16 @@ public class FeedbackResourceIntTest {
                 .stars(DEFAULT_STARS)
                 .dateOfPublish(DEFAULT_DATE_OF_PUBLISH)
                 .description(DEFAULT_DESCRIPTION);
+        // Add required entity
+        Book book = BookResourceIntTest.createEntity(em);
+        em.persist(book);
+        em.flush();
+        feedback.setBook(book);
+        // Add required entity
+        User user = UserResourceIntTest.createEntity(em);
+        em.persist(user);
+        em.flush();
+        feedback.setUser(user);
         return feedback;
     }
 

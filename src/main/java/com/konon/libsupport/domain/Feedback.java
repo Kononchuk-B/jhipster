@@ -38,9 +38,11 @@ public class Feedback implements Serializable {
     private String description;
 
     @ManyToOne
+    @NotNull
     private Book book;
 
     @ManyToOne
+    @NotNull
     private User user;
 
     public Long getId() {

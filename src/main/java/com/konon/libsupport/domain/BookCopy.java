@@ -28,6 +28,7 @@ public class BookCopy implements Serializable {
     private LocalDate dateOfSupply;
 
     @ManyToOne
+    @NotNull
     private Book book;
 
     public Long getId() {

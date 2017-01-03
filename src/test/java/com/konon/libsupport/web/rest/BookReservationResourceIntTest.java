@@ -3,6 +3,8 @@ package com.konon.libsupport.web.rest;
 import com.konon.libsupport.LibSupportApp;
 
 import com.konon.libsupport.domain.BookReservation;
+import com.konon.libsupport.domain.Book;
+import com.konon.libsupport.domain.User;
 import com.konon.libsupport.repository.BookReservationRepository;
 import com.konon.libsupport.service.BookReservationService;
 
@@ -85,6 +87,16 @@ public class BookReservationResourceIntTest {
         BookReservation bookReservation = new BookReservation()
                 .startDate(DEFAULT_START_DATE)
                 .endDate(DEFAULT_END_DATE);
+        // Add required entity
+        Book book = BookResourceIntTest.createEntity(em);
+        em.persist(book);
+        em.flush();
+        bookReservation.setBook(book);
+        // Add required entity
+        User user = UserResourceIntTest.createEntity(em);
+        em.persist(user);
+        em.flush();
+        bookReservation.setUser(user);
         return bookReservation;
     }
 

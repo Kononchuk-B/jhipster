@@ -2,9 +2,12 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "many-to-one",
             "relationshipName": "book",
             "otherEntityName": "book",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
             "otherEntityField": "id"
         }
     ],
@@ -18,8 +21,8 @@
         }
     ],
     "changelogDate": "20170103141938",
-    "entityTableName": "book_copy",
     "dto": "no",
-    "pagination": "infinite-scroll",
-    "service": "serviceImpl"
+    "service": "serviceImpl",
+    "entityTableName": "book_copy",
+    "pagination": "infinite-scroll"
 }

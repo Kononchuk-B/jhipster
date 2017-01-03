@@ -3,6 +3,7 @@ package com.konon.libsupport.web.rest;
 import com.konon.libsupport.LibSupportApp;
 
 import com.konon.libsupport.domain.BookCopy;
+import com.konon.libsupport.domain.Book;
 import com.konon.libsupport.repository.BookCopyRepository;
 import com.konon.libsupport.service.BookCopyService;
 
@@ -81,6 +82,11 @@ public class BookCopyResourceIntTest {
     public static BookCopy createEntity(EntityManager em) {
         BookCopy bookCopy = new BookCopy()
                 .dateOfSupply(DEFAULT_DATE_OF_SUPPLY);
+        // Add required entity
+        Book book = BookResourceIntTest.createEntity(em);
+        em.persist(book);
+        em.flush();
+        bookCopy.setBook(book);
         return bookCopy;
     }
 

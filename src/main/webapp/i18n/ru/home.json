@@ -1,9 +1,9 @@
 {
     "home": {
-        "title": "Добро пожаловать, Java Hipster!",
-        "subtitle": "Это ваша домашняя страница",
+        "title": "Вітаємо вас у Library Support System!",
+        "subtitle": "Це ваша домашня сторінка",
         "logged": {
-            "message": "Вы вошли как пользователь \"{{username}}\"."
+            "message": "Ви ввійшли як \"{{username}}\"."
         },
         "question": "Если у Вас возникли вопросы по JHipster:",
         "link": {

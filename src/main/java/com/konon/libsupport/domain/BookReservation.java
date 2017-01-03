@@ -32,9 +32,11 @@ public class BookReservation implements Serializable {
     private LocalDate endDate;
 
     @ManyToOne
+    @NotNull
     private Book book;
 
     @ManyToOne
+    @NotNull
     private User user;
 
     public Long getId() {
