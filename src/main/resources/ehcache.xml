@@ -20,5 +20,19 @@
 
     <cache alias="com.konon.libsupport.domain.User.persistentTokens" uses-template="simple"/>
 
+    <cache alias="com.konon.libsupport.domain.Feedback" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.Book" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.Book.bookReservations" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.Book.bookCopies" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.Book.feedbacks" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.BookCopy" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.BookReservation" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

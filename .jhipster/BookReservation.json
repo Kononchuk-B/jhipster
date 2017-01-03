@@ -32,7 +32,7 @@
         }
     ],
     "changelogDate": "20170103141939",
-    "dto": "mapstruct",
+    "dto": "no",
     "service": "serviceImpl",
     "entityTableName": "book_reservation",
     "pagination": "infinite-scroll"

@@ -32,7 +32,7 @@
 
         <div class="form-group">
             <label data-translate="libSupportApp.bookCopy.book" for="field_book">Book</label>
-            <select class="form-control" id="field_book" name="book" ng-model="vm.bookCopy.bookId" ng-options="book.id as book.id for book in vm.books"            >
+            <select class="form-control" id="field_book" name="book" ng-model="vm.bookCopy.book" ng-options="book as book.id for book in vm.books track by book.id">
                 <option value=""></option>
             </select>
         </div>

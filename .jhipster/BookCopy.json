@@ -19,7 +19,7 @@
     ],
     "changelogDate": "20170103141938",
     "entityTableName": "book_copy",
-    "dto": "mapstruct",
+    "dto": "no",
     "pagination": "infinite-scroll",
     "service": "serviceImpl"
 }

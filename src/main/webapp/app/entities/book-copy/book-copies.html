@@ -20,7 +20,7 @@
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dateOfSupply"><span data-translate="libSupportApp.bookCopy.dateOfSupply">Date Of Supply</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="bookId"><span data-translate="libSupportApp.bookCopy.book">Book</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="book.id"><span data-translate="libSupportApp.bookCopy.book">Book</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -29,7 +29,7 @@
                     <td><a ui-sref="book-copy-detail({id:bookCopy.id})">{{bookCopy.id}}</a></td>
                         <td>{{bookCopy.dateOfSupply | date:'mediumDate'}}</td>
                     <td>
-                        <a ui-sref="book-detail({id:bookCopy.bookId})">{{bookCopy.bookId}}</a>
+                        <a ui-sref="book-detail({id:bookCopy.book.id})">{{bookCopy.book.id}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

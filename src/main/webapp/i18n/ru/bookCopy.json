@@ -1,0 +1,23 @@
+{
+    "libSupportApp": {
+        "bookCopy" : {
+            "home": {
+                "title": "Book Copies",
+                "createLabel": "Создать новый Book Copy",
+                "createOrEditLabel": "Создать или отредактировать Book Copy",
+                "search": "Найти Book Copy"
+            },
+            "created": "Новый Book Copy создан с идентификатором {{ param }}",
+            "updated": "Book Copy обновлен с идентификатором {{ param }}",
+            "deleted": "Book Copy удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Book Copy {{ id }}?"
+            },
+            "detail": {
+                "title": "Book Copy"
+            },
+            "dateOfSupply": "Date Of Supply",
+            "book": "Book"
+        }
+    }
+}

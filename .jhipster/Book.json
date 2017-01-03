@@ -51,7 +51,7 @@
     ],
     "changelogDate": "20170103141937",
     "entityTableName": "book",
-    "dto": "mapstruct",
+    "dto": "no",
     "pagination": "infinite-scroll",
     "service": "serviceImpl"
 }

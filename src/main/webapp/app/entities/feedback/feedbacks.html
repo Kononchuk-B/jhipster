@@ -22,8 +22,8 @@
                     <th jh-sort-by="stars"><span data-translate="libSupportApp.feedback.stars">Stars</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dateOfPublish"><span data-translate="libSupportApp.feedback.dateOfPublish">Date Of Publish</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="description"><span data-translate="libSupportApp.feedback.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="bookId"><span data-translate="libSupportApp.feedback.book">Book</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="userLogin"><span data-translate="libSupportApp.feedback.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="book.id"><span data-translate="libSupportApp.feedback.book">Book</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.login"><span data-translate="libSupportApp.feedback.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -34,10 +34,10 @@
                         <td>{{feedback.dateOfPublish | date:'mediumDate'}}</td>
                     <td>{{feedback.description}}</td>
                     <td>
-                        <a ui-sref="book-detail({id:feedback.bookId})">{{feedback.bookId}}</a>
+                        <a ui-sref="book-detail({id:feedback.book.id})">{{feedback.book.id}}</a>
                     </td>
                     <td>
-                        {{feedback.userLogin}}
+                        {{feedback.user.login}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

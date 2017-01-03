@@ -46,7 +46,7 @@
         }
     ],
     "changelogDate": "20170103141936",
-    "dto": "mapstruct",
+    "dto": "no",
     "service": "serviceImpl",
     "entityTableName": "feedback",
     "pagination": "infinite-scroll"
