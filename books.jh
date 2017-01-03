@@ -29,7 +29,6 @@ relationship OneToMany {
 }
 
 paginate Book, Feedback, BookReservation, BookCopy with infinite-scroll
-dto * with mapstruct
 service all with serviceImpl
 
 
