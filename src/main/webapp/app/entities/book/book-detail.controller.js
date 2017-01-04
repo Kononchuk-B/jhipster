@@ -5,9 +5,9 @@
         .module('libSupportApp')
         .controller('BookDetailController', BookDetailController);
 
-    BookDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Book', 'BookReservation', 'BookCopy', 'Feedback'];
+    BookDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Book', 'BookReservation', 'BookCopy', 'Feedback', 'Genre'];
 
-    function BookDetailController($scope, $rootScope, $stateParams, previousState, entity, Book, BookReservation, BookCopy, Feedback) {
+    function BookDetailController($scope, $rootScope, $stateParams, previousState, entity, Book, BookReservation, BookCopy, Feedback, Genre) {
         var vm = this;
 
         vm.book = entity;

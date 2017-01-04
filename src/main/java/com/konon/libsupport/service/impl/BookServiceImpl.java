@@ -59,7 +59,7 @@ public class BookServiceImpl implements BookService{
     @Transactional(readOnly = true) 
     public Book findOne(Long id) {
         log.debug("Request to get Book : {}", id);
-        Book book = bookRepository.findOne(id);
+        Book book = bookRepository.findOneWithEagerRelationships(id);
         return book;
     }
 

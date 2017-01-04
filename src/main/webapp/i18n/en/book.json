@@ -24,7 +24,8 @@
             "isAvailable": "Is Available",
             "bookReservation": "Book Reservation",
             "bookCopy": "Book Copy",
-            "feedback": "Feedback"
+            "feedback": "Feedback",
+            "genre": "Genre"
         }
     }
 }

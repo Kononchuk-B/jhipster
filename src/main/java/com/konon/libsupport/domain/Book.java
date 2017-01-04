@@ -60,6 +60,13 @@ public class Book implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Feedback> feedbacks = new HashSet<>();
 
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "book_genre",
+               joinColumns = @JoinColumn(name="books_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="genres_id", referencedColumnName="ID"))
+    private Set<Genre> genres = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -219,6 +226,31 @@ public class Book implements Serializable {
 
     public void setFeedbacks(Set<Feedback> feedbacks) {
         this.feedbacks = feedbacks;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public Book genres(Set<Genre> genres) {
+        this.genres = genres;
+        return this;
+    }
+
+    public Book addGenre(Genre genre) {
+        genres.add(genre);
+        genre.getBooks().add(this);
+        return this;
+    }
+
+    public Book removeGenre(Genre genre) {
+        genres.remove(genre);
+        genre.getBooks().remove(this);
+        return this;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 
     @Override

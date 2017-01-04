@@ -18,6 +18,14 @@
             "relationshipName": "feedback",
             "otherEntityName": "feedback",
             "otherEntityRelationshipName": "book"
+        },
+        {
+            "relationshipName": "genre",
+            "otherEntityName": "genre",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "type",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "book"
         }
     ],
     "fields": [
@@ -50,8 +58,8 @@
         }
     ],
     "changelogDate": "20170103141937",
-    "entityTableName": "book",
     "dto": "no",
-    "pagination": "infinite-scroll",
-    "service": "serviceImpl"
+    "service": "serviceImpl",
+    "entityTableName": "book",
+    "pagination": "infinite-scroll"
 }

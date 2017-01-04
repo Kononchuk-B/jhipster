@@ -28,6 +28,12 @@
         <dd>
             <span>{{vm.book.isAvailable}}</span>
         </dd>
+        <dt><span data-translate="libSupportApp.book.genre">Genre</span></dt>
+        <dd>
+            <span ng-repeat="genre in vm.book.genres">
+                <a ui-sref="genre-detail({id: genre.id})">{{genre.type}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
     </dl>
 
     <button type="submit"

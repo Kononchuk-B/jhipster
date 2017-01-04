@@ -2,9 +2,9 @@
 
 describe('Controller Tests', function() {
 
-    describe('Book Management Detail Controller', function() {
+    describe('Genre Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockBook, MockBookReservation, MockBookCopy, MockFeedback, MockGenre;
+        var MockEntity, MockPreviousState, MockGenre, MockBook;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -12,11 +12,8 @@ describe('Controller Tests', function() {
             $scope = $rootScope.$new();
             MockEntity = jasmine.createSpy('MockEntity');
             MockPreviousState = jasmine.createSpy('MockPreviousState');
-            MockBook = jasmine.createSpy('MockBook');
-            MockBookReservation = jasmine.createSpy('MockBookReservation');
-            MockBookCopy = jasmine.createSpy('MockBookCopy');
-            MockFeedback = jasmine.createSpy('MockFeedback');
             MockGenre = jasmine.createSpy('MockGenre');
+            MockBook = jasmine.createSpy('MockBook');
             
 
             var locals = {
@@ -24,21 +21,18 @@ describe('Controller Tests', function() {
                 '$rootScope': $rootScope,
                 'entity': MockEntity,
                 'previousState': MockPreviousState,
-                'Book': MockBook,
-                'BookReservation': MockBookReservation,
-                'BookCopy': MockBookCopy,
-                'Feedback': MockFeedback,
-                'Genre': MockGenre
+                'Genre': MockGenre,
+                'Book': MockBook
             };
             createController = function() {
-                $injector.get('$controller')("BookDetailController", locals);
+                $injector.get('$controller')("GenreDetailController", locals);
             };
         }));
 
 
         describe('Root Scope Listening', function() {
             it('Unregisters root scope listener upon scope destruction', function() {
-                var eventType = 'libSupportApp:bookUpdate';
+                var eventType = 'libSupportApp:genreUpdate';
 
                 createController();
                 expect($rootScope.$$listenerCount[eventType]).toEqual(1);

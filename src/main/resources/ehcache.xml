@@ -34,5 +34,11 @@
 
     <cache alias="com.konon.libsupport.domain.BookReservation" uses-template="simple"/>
 
+    <cache alias="com.konon.libsupport.domain.Genre" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.Book.genres" uses-template="simple"/>
+
+    <cache alias="com.konon.libsupport.domain.Genre.books" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

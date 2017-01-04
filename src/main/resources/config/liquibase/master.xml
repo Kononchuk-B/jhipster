@@ -9,7 +9,9 @@
     <include file="classpath:config/liquibase/changelog/20170103141937_added_entity_Book.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170103141938_added_entity_BookCopy.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170103141939_added_entity_BookReservation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170104101203_added_entity_Genre.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170103141936_added_entity_constraints_Feedback.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170103141938_added_entity_constraints_BookCopy.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170103141939_added_entity_constraints_BookReservation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170103141937_added_entity_constraints_Book.xml" relativeToChangelogFile="false"/>
 </databaseChangeLog>
