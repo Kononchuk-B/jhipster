@@ -2,25 +2,25 @@
     "libSupportApp": {
         "feedback" : {
             "home": {
-                "title": "Feedbacks",
-                "createLabel": "Создать новый Feedback",
-                "createOrEditLabel": "Создать или отредактировать Feedback",
-                "search": "Найти Feedback"
+                "title": "Відгуки",
+                "createLabel": "Додати новий відгук",
+                "createOrEditLabel": "Редагування відгуку",
+                "search": "Найти відгук"
             },
-            "created": "Новый Feedback создан с идентификатором {{ param }}",
-            "updated": "Feedback обновлен с идентификатором {{ param }}",
-            "deleted": "Feedback удален с идентификатором {{ param }}",
+            "created": "Створено новий відгук з ідентифікатором {{ param }}",
+            "updated": "Відгук з ідентифікатором {{ param }} оновлений",
+            "deleted": "Відгук з ідентифікатором {{ param }} видалений",
             "delete": {
-                "question": "Вы уверены что хотите удалить Feedback {{ id }}?"
+                "question": "Ви впевнені, що хочете видалити відгук {{ id }}?"
             },
             "detail": {
-                "title": "Feedback"
+                "title": "Відгук"
             },
-            "stars": "Stars",
-            "dateOfPublish": "Date Of Publish",
-            "description": "Description",
-            "book": "Book",
-            "user": "User"
+            "stars": "Оцінка",
+            "dateOfPublish": "Дата публікації",
+            "description": "Опис",
+            "book": "Книга",
+            "user": "Користувач"
         }
     }
 }

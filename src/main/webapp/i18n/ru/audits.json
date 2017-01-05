@@ -2,25 +2,25 @@
     "audits": {
         "title": "Аудит",
         "filter": {
-            "title": "Фильтр по дате",
-            "from": "от",
+            "title": "Фільтр по даті",
+            "from": "від",
             "to": "до",
             "button": {
-                "weeks": "Недель",
-                "today": "сегодня",
-                "clear": "очистить",
-                "close": "закрыть"
+                "weeks": "Тижнів",
+                "today": "сьогодні",
+                "clear": "очистити",
+                "close": "закрити"
             }
         },
         "table": {
             "header": {
-                "principal": "Пользователь",
+                "principal": "Користувач",
                 "date": "Дата",
-                "status": "Состояние",
-                "data": "Доп. инф."
+                "status": "Стан",
+                "data": "Дод. інф."
             },
             "data": {
-                "remoteAddress": "Удалённый адрес:"
+                "remoteAddress": "Віддалена адреса:"
             }
         }
     }

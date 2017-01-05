@@ -1,12 +1,12 @@
 {
     "global": {
         "title": "LibSupport",
-        "browsehappy": "Ваш браузер <strong>устарел</strong>. Пожалуйста <a href=\"http://browsehappy.com/?locale=ru\">обновите ваш браузер</a>.",
+        "browsehappy": "Ваш браузер <strong>застарів :(</strong>. Будь ласка, <a href=\"http://browsehappy.com/?locale=ru\">обновіть ваш браузер</a>.",
         "menu": {
-            "home": "Главная",
+            "home": "Головна",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
-                "main": "Сущности",
+                "main": "Моделі",
                 "feedback": "Feedback",
                 "book": "Book",
                 "bookCopy": "Book Copy",
@@ -15,69 +15,70 @@
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
-                "main": "Профиль",
-                "settings": "Настройки",
+                "main": "Профіль",
+                "settings": "Налаштування",
                 "password": "Пароль",
-                "sessions": "Сессии",
-                "login": "Войти",
-                "logout": "Выйти",
-                "register": "Зарегистрироваться"
+                "sessions": "Сесії",
+                "login": "Ввійти",
+                "logout": "Вийти",
+                "register": "Зареєструватись"
             },
             "admin": {
-                "main": "Администрирование",
-                "userManagement": "Управление пользователями",
-                "tracker": "Трекер польз.",
+                "main": "Адміністрування",
+                "userManagement": "Управління користувачами",
+                "tracker": "Корисності.",
                 "metrics": "Метрики",
-                "health": "Состояние",
-                "configuration": "Настройки",
+                "health": "Стан",
+                "configuration": "Налаштування",
                 "logs": "Логи",
                 "audits": "Аудит",
                 "apidocs": "API",
-                "database": "База данных",
+                "database": "База данних",
                 "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
             },
-            "language": "Язык"
+            "language": "Мова"
         },
         "form": {
-            "username": "Логин",
-            "username.placeholder": "Ваш логин",
-            "newpassword": "Новый пароль",
-            "newpassword.placeholder": "Новый пароль",
-            "confirmpassword": "Подтверждение нового пароля",
-            "confirmpassword.placeholder": "Подтвердите новый пароль",
+            "username": "Логін",
+            "username.placeholder": "Ваш логін",
+            "newpassword": "Новий пароль",
+            "newpassword.placeholder": "Новий пароль",
+            "confirmpassword": "Підтвердження нового пароля",
+            "confirmpassword.placeholder": "Підтвердіть новий пароль",
             "email": "E-mail",
             "email.placeholder": "Ваш e-mail"
         },
         "messages": {
             "info": {
                 "authenticated": "Если вы хотите <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">авторизироваться</a>, вы можете попробовать аккаунты по умолчанию:<br/>- Администратор (логин=\"admin\" и пароль=\"admin\") <br/>- Пользователь (логин=\"user\" и пароль=\"user\").",
-                "register": "У вас нет аккаунта? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Создать новый аккаунт</a>"
+                "register": "У вас немає акаунту? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Створити новий акаунт</a>",
+                "sign.in": "Будь ласка <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">увійдіть</a> щоб продовжити"
             },
             "error": {
-                "dontmatch": "Пароль и его подтверждение не совпадают!"
+                "dontmatch": "Підтвердження пароля не співпадає!"
             },
             "validate": {
                 "newpassword": {
-                    "required": "Пароль должен быть указан.",
-                    "minlength": "Длина пароля должна быть хотя-бы 5 символов",
-                    "maxlength": "Пароль не может быть длиннее чем 50 символов",
-                    "strength": "Сложность пароля:"
+                    "required": "Будь ласка укажіть пароль.",
+                    "minlength": "Довжина пароля повинна бути не менше 5 символів",
+                    "maxlength": "Пароль не може бути довшим ніж 50 символів",
+                    "strength": "Складність пароля:"
                 },
                 "confirmpassword": {
-                    "required": "подтверждение пароля должно быть указано.",
-                    "minlength": "Длина подтверждения пароля должна быть хотя-бы 5 символов",
-                    "maxlength": "Подтверждение пароля не может быть больше чем 50 символов"
+                    "required": "Заповніть поле для підтвердження пароля",
+                    "minlength": "Довжина пароля повинна бути не менше 5 символів",
+                    "maxlength": "Пароль не може бути довшим ніж 50 символів"
                 },
                 "email": {
-                    "required": "E-mail должен быть указан.",
-                    "invalid": "E-mail не верен.",
-                    "minlength": "Длина e-mail должна быть хотя-бы 5 символов",
-                    "maxlength": "E-mail не может быть длиннее чем 50 символов"
+                    "required": "Укажіть свій e-mail",
+                    "invalid": "E-mail не правильний.",
+                    "minlength": "Довжина e-mail повинна бути хоча б 5 символів",
+                    "maxlength": "E-mail не може бути довший ніж 50 символів"
                 }
             }
         },
         "field": {
-            "id" : "ID"
+            "id" : "Іd"
         },
         "ribbon": {
             "dev":"Development"
@@ -85,44 +86,44 @@
     },
     "entity": {
         "action": {
-            "addblob": "Добавить двоичный объект",
-            "addimage": "Добавить изображение",
+            "addblob": "Добавити двійний об'єкт",
+            "addimage": "Добавити зображення",
             "back": "Назад",
-            "cancel": "Отмена",
-            "delete": "Удалить",
-            "edit": "Изменить",
-            "open": "Open",
-            "save": "Сохранить",
-            "view": "Просмотр"
+            "cancel": "Відмінити",
+            "delete": "Видалити",
+            "edit": "Змінити",
+            "open": "Відкрити",
+            "save": "Зберегти",
+            "view": "Перегляд"
         },
         "detail": {
             "field": "Поле",
-            "value": "Значение"
+            "value": "Значення"
         },
         "delete": {
-            "title": "Подтвердите операцию удаления"
+            "title": "Підтвердіть операцію видалення"
         },
         "validation": {
-            "required": "Это поле обязательно к заполнению.",
-            "minlength": "Это поле является обязательным, по крайней мере {{min}} символов.",
-            "maxlength": "Это поле не может быть длинее, чем {{max}} символов.",
-            "min": "Это поле должно быть больше, чем {{min}}.",
-            "max": "Это поле не может быть больше, чем {{max}}.",
-            "minbytes": "Это поле должно быть больше, чем {{min}} байтов.",
-            "maxbytes": "Это поле не может быть больше, чем {{max}} байтов.",
-            "pattern": "Это поле должно следовать модели {{pattern}}.",
-            "number": "Это поле должно быть число.",
-            "datetimelocal": "Это поле должно быть дата и время."
+            "required": "Це поле обов'язкове для заповнення",
+            "minlength": "Це поле обов'язкове для заповнення, принаймі на {{min}} символів.",
+            "maxlength": "Це поле не може бути довше ніж чем {{max}} символів.",
+            "min": "Це поле повинно бути довше ніж {{min}}.",
+            "max": "Це поле не може бути довше ніж {{max}}.",
+            "minbytes": "Це поле повинно бути довше ніж {{min}} байтів.",
+            "maxbytes": "Це поле не може бути довше {{max}} байтів.",
+            "pattern": "Це поле повинно слідувати моделі {{pattern}}.",
+            "number": "Тут можна ввести лише число",
+            "datetimelocal": "Тут можна ввести лише дату та час"
         }
     },
     "error": {
-        "server.not.reachable": "Сервер не доступен",
-        "url.not.found": "Not found",
-        "NotNull": "Поле {{fieldName}} не может быть пустым!",
-        "Size": "Поле {{fieldName}} не отвечает требованиям мин/макс.го размера!",
-        "userexists": "Имя пользователя уже используется!",
-        "emailexists": "Эл. почта уже используется!!",
-        "idexists": "Новый {{entityName}} не может иметь данный ID"
+        "server.not.reachable": "Сервер не доступний",
+        "url.not.found": "Ой! Не знайшли...",
+        "NotNull": "Поле {{fieldName}} не може бути пустим",
+        "Size": "Поле {{fieldName}} не відповідає вимогам допустимого розміру",
+        "userexists": "На жаль, ім'я користувача вже використовується",
+        "emailexists": "На жаль, ця пошта уже використовується",
+        "idexists": "Новий {{entityName}} не може мати наступний ID"
     },
-    "footer": "Это ваш футтер"
+    "footer": "Шось там про права в футері"
 }

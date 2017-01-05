@@ -1,30 +1,30 @@
 {
     "settings": {
-        "title": "Настройки пользователя для [<b>{{username}}</b>]",
+        "title": "Налаштування користувача для [<b>{{username}}</b>]",
         "form": {
-            "firstname": "Имя",
-            "firstname.placeholder": "Ваше имя",
-            "lastname": "Фамилия",
-            "lastname.placeholder": "Ваша фамилия",
-            "language": "Язык",
-            "button": "Сохранить"
+            "firstname": "Ім'я",
+            "firstname.placeholder": "Ваше ім'я",
+            "lastname": "Прізвище",
+            "lastname.placeholder": "Ваше прізвище",
+            "language": "Мова",
+            "button": "Зберегти"
         },
         "messages": {
             "error": {
-                "fail": "<strong>Произошла ошибка!</strong> Настройки не могут быть сохранены.",
-                "emailexists": "<strong>E-mail уже используется!</strong> Пожалуйста, попробуйте другой."
+                "fail": "<strong>Ой! Сталась помилка.</strong> Налаштування не можуть бути збережені.",
+                "emailexists": "<strong>E-mail уже використовується.</strong> Будь ласка, спробуйте інший."
             },
-            "success": "<strong>Настройки сохранены!</strong>",
+            "success": "<strong>Налаштування збережені.</strong>",
             "validate": {
                 "firstname": {
-                    "required": "Имя должно быть указано.",
-                    "minlength": "Длина имени должна быть хотя-бы 1 символ",
-                    "maxlength": "Имя не может быть длиннее чем 50 символов"
+                    "required": "Вкажіть ім'я.",
+                    "minlength": "Довжина імені повинна бути хоча б 1 символ",
+                    "maxlength": "Ім'я не може бути довшим ніж 50 символів"
                 },
                 "lastname": {
-                    "required": "Фамилия должна быть указана.",
-                    "minlength": "Длина фамилии должна быть хотя-бы 1 символ",
-                    "maxlength": "Фамилия не может быть длиннее чем 50 символов"
+                    "required": "Вкажіть прізвище.",
+                    "minlength": "Довжина прізвища повинна бути хоча б 1 символ",
+                    "maxlength": "Прізвище не може бути довшим ніж 50 символів"
                 }
             }
         }

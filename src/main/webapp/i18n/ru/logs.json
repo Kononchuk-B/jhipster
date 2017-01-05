@@ -1,11 +1,11 @@
 {
     "logs": {
         "title": "Логи",
-        "nbloggers": "Есть {{ total }} логгеров.",
-        "filter": "Фильтр",
+        "nbloggers": "Доступно {{ total }} логерів.",
+        "filter": "Фільтр",
         "table": {
-            "name": "Название",
-            "level": "Уровень"
+            "name": "Назва",
+            "level": "Рівень"
         }
     }
 }

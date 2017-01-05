@@ -2,22 +2,22 @@
     "libSupportApp": {
         "genre" : {
             "home": {
-                "title": "Genres",
-                "createLabel": "Создать новый Genre",
-                "createOrEditLabel": "Создать или отредактировать Genre",
-                "search": "Найти Genre"
+                "title": "Жанри",
+                "createLabel": "Додати новий жанр",
+                "createOrEditLabel": "Редагування жанру",
+                "search": "Найти жанр"
             },
-            "created": "Новый Genre создан с идентификатором {{ param }}",
-            "updated": "Genre обновлен с идентификатором {{ param }}",
-            "deleted": "Genre удален с идентификатором {{ param }}",
+            "created": "Створено новий відгук з ідентифікатором {{ param }}",
+            "updated": "Жанр з ідентифікатором {{ param }} оновлений",
+            "deleted": "Жанр з ідентифікатором {{ param }} видалений",
             "delete": {
-                "question": "Вы уверены что хотите удалить Genre {{ id }}?"
+                "question": "Ви впевнені, що хочете видалити жанр {{ id }}?"
             },
             "detail": {
-                "title": "Genre"
+                "title": "Жанр"
             },
-            "type": "Type",
-            "book": "Book"
+            "type": "Тип",
+            "book": "Книга"
         }
     }
 }

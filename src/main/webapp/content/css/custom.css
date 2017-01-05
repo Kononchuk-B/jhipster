@@ -1,0 +1,19 @@
+.well {
+    border-color: #2B6EA1;
+}
+
+.navbar-default {
+    border-bottom-color: #2B6EA1;
+}
+
+.alert-warning {
+    border-color: darkblue;
+}
+
+.modal-header {
+    border-bottom-color: #2B6EA1;
+}
+
+.modal-content {
+    border-bottom-color: #2B6EA1;
+}

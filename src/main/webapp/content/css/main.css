@@ -1,5 +1,7 @@
 body {
-    background: #fafafa;
+    /*background: rgba(105, 191, 230, 0.41);*/
+    background: url("../images/blured.jpg") repeat-y center top ;
+    background-size: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }

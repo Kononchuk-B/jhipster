@@ -1,22 +1,22 @@
 {
     "health": {
-        "title": "Состояние",
-        "refresh.button": "Обновить",
+        "title": "Стан",
+        "refresh.button": "Обновити",
         "stacktrace": "Stacktrace",
         "details": {
-            "details": "Детали",
-            "properties": "Параметры",
-            "name": "Имя",
-            "value": "Значение",
-            "error": "Ошибка"
+            "details": "Деталі",
+            "properties": "Параметри",
+            "name": "Ім'я",
+            "value": "Значення",
+            "error": "Помилка"
         },
         "indicator": {
-            "diskSpace": "Место на диске",
+            "diskSpace": "Місце на диску",
             "mail": "Email",
-            "db": "База данных"
+            "db": "База данних"
         },
         "table": {
-            "service": "Название сервиса",
+            "service": "Назва сервіса",
             "status": "Статус"
         },
         "status": {

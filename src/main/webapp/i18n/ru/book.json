@@ -2,30 +2,30 @@
     "libSupportApp": {
         "book" : {
             "home": {
-                "title": "Books",
-                "createLabel": "Создать новый Book",
-                "createOrEditLabel": "Создать или отредактировать Book",
-                "search": "Найти Book"
+                "title": "Книги",
+                "createLabel": "Додати нову книгу",
+                "createOrEditLabel": "Редагування книги",
+                "search": "Найти книгу"
             },
-            "created": "Новый Book создан с идентификатором {{ param }}",
-            "updated": "Book обновлен с идентификатором {{ param }}",
-            "deleted": "Book удален с идентификатором {{ param }}",
+            "created": "Створена нова книга з ідентифікатором {{ param }}",
+            "updated": "Книга з ідентифікатором {{ param }} оновлена",
+            "deleted": "Книга з ідентифікатором {{ param }} видалена",
             "delete": {
-                "question": "Вы уверены что хотите удалить Book {{ id }}?"
+                "question": "Ви впевнені, що хочете видалити книгу {{ id }}?"
             },
             "detail": {
-                "title": "Book"
+                "title": "Книга"
             },
-            "name": "Name",
-            "author": "Author",
-            "edition": "Edition",
-            "numberOfPages": "Number Of Pages",
-            "yearOfPublish": "Year Of Publish",
-            "isAvailable": "Is Available",
-            "bookReservation": "Book Reservation",
-            "bookCopy": "Book Copy",
-            "feedback": "Feedback",
-            "genre": "Genre"
+            "name": "Ім'я",
+            "author": "Автор",
+            "edition": "Видавництво",
+            "numberOfPages": "Кількість сторінок",
+            "yearOfPublish": "Рік публікації",
+            "isAvailable": "В наявності",
+            "bookReservation": "Резервації",
+            "bookCopy": "Екземпляри",
+            "feedback": "Відгуки",
+            "genre": "Жанр"
         }
     }
 }

@@ -2,22 +2,22 @@
     "libSupportApp": {
         "bookCopy" : {
             "home": {
-                "title": "Book Copies",
-                "createLabel": "Создать новый Book Copy",
-                "createOrEditLabel": "Создать или отредактировать Book Copy",
-                "search": "Найти Book Copy"
+                "title": "Екземпляри книг",
+                "createLabel": "Додати новий екземпляр",
+                "createOrEditLabel": "Редагування екземпляру",
+                "search": "Найти екземпляр книги"
             },
-            "created": "Новый Book Copy создан с идентификатором {{ param }}",
-            "updated": "Book Copy обновлен с идентификатором {{ param }}",
-            "deleted": "Book Copy удален с идентификатором {{ param }}",
+            "created": "Створено новий екземпляр з ідентифікатором {{ param }}",
+            "updated": "Екземпляр книги з ідентифікатором {{ param }} оновлений",
+            "deleted": "Екземпляр книги з ідентифікатором {{ param }} видалений",
             "delete": {
-                "question": "Вы уверены что хотите удалить Book Copy {{ id }}?"
+                "question": "Ви впевнені, що хочете видалити цей екземпляр{{ id }}?"
             },
             "detail": {
-                "title": "Book Copy"
+                "title": "Екземпляр книги"
             },
-            "dateOfSupply": "Date Of Supply",
-            "book": "Book"
+            "dateOfSupply": "Дата поставки",
+            "book": "Книга"
         }
     }
 }

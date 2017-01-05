@@ -2,6 +2,9 @@ package com.konon.libsupport.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.konon.libsupport.domain.Feedback;
+import com.konon.libsupport.repository.FeedbackRepository;
+import com.konon.libsupport.security.AuthoritiesConstants;
+import com.konon.libsupport.security.SecurityUtils;
 import com.konon.libsupport.service.FeedbackService;
 import com.konon.libsupport.web.rest.util.HeaderUtil;
 import com.konon.libsupport.web.rest.util.PaginationUtil;
@@ -10,6 +13,7 @@ import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -31,9 +35,12 @@ import java.util.Optional;
 public class FeedbackResource {
 
     private final Logger log = LoggerFactory.getLogger(FeedbackResource.class);
-        
+
     @Inject
     private FeedbackService feedbackService;
+
+    @Inject
+    private FeedbackRepository feedbackRepository;
 
     /**
      * POST  /feedbacks : Create a new feedback.
@@ -89,7 +96,12 @@ public class FeedbackResource {
     public ResponseEntity<List<Feedback>> getAllFeedbacks(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Feedbacks");
-        Page<Feedback> page = feedbackService.findAll(pageable);
+        Page<Feedback> page;
+        if(SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
+            page = feedbackService.findAll(pageable);
+        } else {
+            page = new PageImpl<>(feedbackRepository.findByUserIsCurrentUser());
+        }
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/feedbacks");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

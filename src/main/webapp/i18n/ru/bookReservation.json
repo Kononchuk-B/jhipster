@@ -2,24 +2,24 @@
     "libSupportApp": {
         "bookReservation" : {
             "home": {
-                "title": "Book Reservations",
-                "createLabel": "Создать новый Book Reservation",
-                "createOrEditLabel": "Создать или отредактировать Book Reservation",
-                "search": "Найти Book Reservation"
+                "title": "Резервації книг",
+                "createLabel": "Зарезервувати книгу",
+                "createOrEditLabel": "Редагування резервації",
+                "search": "Знайти резервацію"
             },
-            "created": "Новый Book Reservation создан с идентификатором {{ param }}",
-            "updated": "Book Reservation обновлен с идентификатором {{ param }}",
-            "deleted": "Book Reservation удален с идентификатором {{ param }}",
+            "created": "Створена нова резервація з ідентифікатором {{ param }}",
+            "updated": "Резервація книги з ідентифікатором {{ param }} оновлена",
+            "deleted": "резервація книги з ідентифікатором {{ param }} видалена",
             "delete": {
-                "question": "Вы уверены что хотите удалить Book Reservation {{ id }}?"
+                "question": "Ви впевнені, що хочете видалити резервацію {{ id }}?"
             },
             "detail": {
-                "title": "Book Reservation"
+                "title": "Резервація книги"
             },
-            "startDate": "Start Date",
-            "endDate": "End Date",
-            "book": "Book",
-            "user": "User"
+            "startDate": "Початкова дата",
+            "endDate": "Кінцева дата",
+            "book": "Книга",
+            "user": "Користувач"
         }
     }
 }

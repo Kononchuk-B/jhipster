@@ -1,15 +1,15 @@
 {
     "sessions": {
-        "title": "Активные сессии для [<b>{{username}}</b>]",
+        "title": "Активні сесії для [<b>{{username}}</b>]",
         "table": {
             "ipaddress": "IP адрес",
             "useragent": "User Agent",
             "date": "Дата",
-            "button": "Завершить"
+            "button": "Завершити"
         },
         "messages": {
-            "success": "<strong>Сессия истекла!</strong>",
-            "error": "<strong>Произошла ошибка!</strong> Сессия не может быть завершена."
+            "success": "<strong>Сессия вичерпана!</strong>",
+            "error": "<strong>Ой! Сталась помилка.</strong> Сесія не може бути завершена."
         }
     }
 }

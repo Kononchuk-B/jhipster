@@ -2,6 +2,7 @@ package com.konon.libsupport.repository;
 
 import com.konon.libsupport.domain.Feedback;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.*;
 
 import java.util.List;
