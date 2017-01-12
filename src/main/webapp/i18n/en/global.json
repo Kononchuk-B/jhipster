@@ -12,6 +12,7 @@
                 "bookCopy": "Book Copy",
                 "bookReservation": "Book Reservation",
                 "genre": "Genre",
+                "category": "Category",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

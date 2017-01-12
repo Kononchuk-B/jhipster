@@ -2,30 +2,31 @@
     "libSupportApp": {
         "book" : {
             "home": {
-                "title": "Книги",
-                "createLabel": "Додати нову книгу",
-                "createOrEditLabel": "Редагування книги",
-                "search": "Найти книгу"
+                "title": "Books",
+                "createLabel": "Создать новый Book",
+                "createOrEditLabel": "Создать или отредактировать Book",
+                "search": "Найти Book"
             },
-            "created": "Створена нова книга з ідентифікатором {{ param }}",
-            "updated": "Книга з ідентифікатором {{ param }} оновлена",
-            "deleted": "Книга з ідентифікатором {{ param }} видалена",
+            "created": "Новый Book создан с идентификатором {{ param }}",
+            "updated": "Book обновлен с идентификатором {{ param }}",
+            "deleted": "Book удален с идентификатором {{ param }}",
             "delete": {
-                "question": "Ви впевнені, що хочете видалити книгу {{ id }}?"
+                "question": "Вы уверены что хотите удалить Book {{ id }}?"
             },
             "detail": {
-                "title": "Книга"
+                "title": "Book"
             },
-            "name": "Ім'я",
-            "author": "Автор",
-            "edition": "Видавництво",
-            "numberOfPages": "Кількість сторінок",
-            "yearOfPublish": "Рік публікації",
-            "isAvailable": "В наявності",
-            "bookReservation": "Резервації",
-            "bookCopy": "Екземпляри",
-            "feedback": "Відгуки",
-            "genre": "Жанр"
+            "name": "Name",
+            "author": "Author",
+            "edition": "Edition",
+            "numberOfPages": "Number Of Pages",
+            "yearOfPublish": "Year Of Publish",
+            "isAvailable": "Is Available",
+            "bookReservation": "Book Reservation",
+            "bookCopy": "Book Copy",
+            "feedback": "Feedback",
+            "genre": "Genre",
+            "category": "Category"
         }
     }
 }

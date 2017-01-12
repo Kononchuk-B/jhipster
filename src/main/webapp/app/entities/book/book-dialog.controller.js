@@ -5,9 +5,9 @@
         .module('libSupportApp')
         .controller('BookDialogController', BookDialogController);
 
-    BookDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Book', 'BookReservation', 'BookCopy', 'Feedback', 'Genre'];
+    BookDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Book', 'BookReservation', 'BookCopy', 'Feedback', 'Genre', 'Category'];
 
-    function BookDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Book, BookReservation, BookCopy, Feedback, Genre) {
+    function BookDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Book, BookReservation, BookCopy, Feedback, Genre, Category) {
         var vm = this;
 
         vm.book = entity;
@@ -19,6 +19,7 @@
         vm.bookcopies = BookCopy.query();
         vm.feedbacks = Feedback.query();
         vm.genres = Genre.query();
+        vm.categories = Category.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

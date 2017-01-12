@@ -13,10 +13,10 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface BookRepository extends JpaRepository<Book,Long> {
 
-    @Query("select distinct book from Book book left join fetch book.genres")
+    @Query("select distinct book from Book book left join fetch book.genres left join fetch book.categories")
     List<Book> findAllWithEagerRelationships();
 
-    @Query("select book from Book book left join fetch book.genres where book.id =:id")
+    @Query("select book from Book book left join fetch book.genres left join fetch book.categories where book.id =:id")
     Book findOneWithEagerRelationships(@Param("id") Long id);
 
 }

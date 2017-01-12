@@ -26,6 +26,14 @@
             "otherEntityField": "type",
             "ownerSide": true,
             "otherEntityRelationshipName": "book"
+        },
+        {
+            "relationshipName": "category",
+            "otherEntityName": "category",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "book"
         }
     ],
     "fields": [

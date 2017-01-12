@@ -62,5 +62,16 @@
 
         <addPrimaryKey columnNames="books_id, genres_id" tableName="book_genre"/>
         
+        <createTable tableName="book_category">
+            <column name="categories_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="books_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="books_id, categories_id" tableName="book_category"/>
+        
     </changeSet>
 </databaseChangeLog>

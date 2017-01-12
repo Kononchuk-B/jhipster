@@ -12,6 +12,7 @@
                 "bookCopy": "Book Copy",
                 "bookReservation": "Book Reservation",
                 "genre": "Genre",
+                "category": "Category",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -19,7 +20,7 @@
                 "settings": "Налаштування",
                 "password": "Пароль",
                 "sessions": "Сесії",
-                "login": "Ввійти",
+                "login": "Увійти",
                 "logout": "Вийти",
                 "register": "Зареєструватись"
             },
@@ -52,7 +53,7 @@
             "info": {
                 "authenticated": "Если вы хотите <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">авторизироваться</a>, вы можете попробовать аккаунты по умолчанию:<br/>- Администратор (логин=\"admin\" и пароль=\"admin\") <br/>- Пользователь (логин=\"user\" и пароль=\"user\").",
                 "register": "У вас немає акаунту? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Створити новий акаунт</a>",
-                "sign.in": "Будь ласка <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">увійдіть</a> щоб продовжити"
+                "sign.in": "Будь ласка <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">увійдіть</a>, щоб продовжити"
             },
             "error": {
                 "dontmatch": "Підтвердження пароля не співпадає!"

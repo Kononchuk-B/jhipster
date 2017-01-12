@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "book",
+            "otherEntityName": "book",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "category"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20170112112316",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "category",
+    "pagination": "infinite-scroll"
+}

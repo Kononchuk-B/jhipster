@@ -31,7 +31,7 @@
                 'pt-br': 'Português (Brasil)',
                 'pt-pt': 'Português',
                 'ro': 'Română',
-                'ru': 'Русский',
+                'ru': 'Українська',
                 'sk': 'Slovenský',
                 'sr': 'Srpski',
                 'sv': 'Svenska',
