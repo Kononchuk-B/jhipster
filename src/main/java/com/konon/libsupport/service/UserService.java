@@ -16,6 +16,7 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import javax.inject.Inject;
 import java.util.*;
@@ -80,7 +81,7 @@ public class UserService {
     }
 
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String langKey) {
+                           String phoneNumber, LocalDate birthday, String langKey) {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
@@ -92,6 +93,8 @@ public class UserService {
         newUser.setFirstName(firstName);
         newUser.setLastName(lastName);
         newUser.setEmail(email);
+        newUser.setPhoneNumber(phoneNumber);
+        newUser.setBirthday(birthday);
         newUser.setLangKey(langKey);
         // new user is not active
         newUser.setActivated(false);
@@ -110,6 +113,8 @@ public class UserService {
         user.setFirstName(managedUserVM.getFirstName());
         user.setLastName(managedUserVM.getLastName());
         user.setEmail(managedUserVM.getEmail());
+        user.setPhoneNumber(managedUserVM.getPhoneNumber());
+        user.setBirthday(managedUserVM.getBirthday());
         if (managedUserVM.getLangKey() == null) {
             user.setLangKey("en"); // default language
         } else {
@@ -132,18 +137,21 @@ public class UserService {
         return user;
     }
 
-    public void updateUser(String firstName, String lastName, String email, String langKey) {
+    public void updateUser(String firstName, String lastName, String email, String phoneNumber,
+                           LocalDate birthday, String langKey) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
             user.setFirstName(firstName);
             user.setLastName(lastName);
             user.setEmail(email);
+            user.setPhoneNumber(phoneNumber);
+            user.setBirthday(birthday);
             user.setLangKey(langKey);
             log.debug("Changed Information for User: {}", user);
         });
     }
 
     public void updateUser(Long id, String login, String firstName, String lastName, String email,
-        boolean activated, String langKey, Set<String> authorities) {
+        String phoneNumber, LocalDate birthday, boolean activated, String langKey, Set<String> authorities) {
 
         Optional.of(userRepository
             .findOne(id))
@@ -152,6 +160,8 @@ public class UserService {
                 user.setFirstName(firstName);
                 user.setLastName(lastName);
                 user.setEmail(email);
+                user.setPhoneNumber(phoneNumber);
+                user.setBirthday(birthday);
                 user.setActivated(activated);
                 user.setLangKey(langKey);
                 Set<Authority> managedAuthorities = user.getAuthorities();

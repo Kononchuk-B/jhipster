@@ -7,6 +7,8 @@ public final class Constants {
 
     //Regex for acceptable logins
     public static final String LOGIN_REGEX = "^[_'.@A-Za-z0-9-]*$";
+    //International phone number regex
+    public static final String PHONE_REGEX = "^\\+(?:[0-9] ?){6,14}[0-9]$";
     // Spring profiles for development, test and production, see http://jhipster.github.io/profiles/
     public static final String SPRING_PROFILE_DEVELOPMENT = "dev";
     public static final String SPRING_PROFILE_TEST = "test";

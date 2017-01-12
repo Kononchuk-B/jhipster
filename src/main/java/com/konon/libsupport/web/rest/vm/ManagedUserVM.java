@@ -1,5 +1,6 @@
 package com.konon.libsupport.web.rest.vm;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 import java.util.Set;
@@ -43,9 +44,10 @@ public class ManagedUserVM extends UserDTO {
     }
 
     public ManagedUserVM(Long id, String login, String password, String firstName, String lastName,
-                         String email, boolean activated, String langKey, Set<String> authorities,
-                         String createdBy, ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate) {
-        super(login, firstName, lastName, email, activated, langKey, authorities);
+                         String email, String phoneNumber, LocalDate birtday, boolean activated,
+                         String langKey, Set<String> authorities, String createdBy, ZonedDateTime createdDate,
+                         String lastModifiedBy, ZonedDateTime lastModifiedDate) {
+        super(login, firstName, lastName, email, phoneNumber, birtday, activated, langKey, authorities);
         this.id = id;
         this.createdBy = createdBy;
         this.createdDate = createdDate;
