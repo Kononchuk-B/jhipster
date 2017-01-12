@@ -37,7 +37,7 @@
         <dt><span data-translate="libSupportApp.book.category">Category</span></dt>
         <dd>
             <span ng-repeat="category in vm.book.categories">
-                <a ui-sref="category-detail({id: category.id})">{{category.id}}</a>{{$last ? '' : ', '}}
+                <a ui-sref="category-detail({id: category.id})">{{category.type}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
     </dl>
