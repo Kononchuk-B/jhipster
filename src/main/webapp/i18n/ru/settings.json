@@ -6,6 +6,10 @@
             "firstname.placeholder": "Ваше ім'я",
             "lastname": "Прізвище",
             "lastname.placeholder": "Ваше прізвище",
+            "birthday": "Дата народження",
+            "phoneNumber": "Номер телефону",
+            "birthday.placeholder": "Ваша дата народження",
+            "phoneNumber.placeholder": "Ваш номер телефону",
             "language": "Мова",
             "button": "Зберегти"
         },
@@ -25,6 +29,14 @@
                     "required": "Вкажіть прізвище.",
                     "minlength": "Довжина прізвища повинна бути хоча б 1 символ",
                     "maxlength": "Прізвище не може бути довшим ніж 50 символів"
+                },
+                "birthday": {
+                    "past": "Виберіть дату в минулому",
+                    "required": "Вкажіть дату вашого народження"
+                },
+                "phone-number" : {
+                    "pattern": "Хибний формат номеру телефона",
+                    "required": "Вкажіть ваш номер телефону"
                 }
             }
         }

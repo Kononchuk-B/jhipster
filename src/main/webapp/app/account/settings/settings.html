@@ -72,6 +72,42 @@
                         </p>
                     </div>
                 </div>
+                ======================================
+                <div class="form-group">
+                    <label class="control-label" for="phoneNumber" data-translate="settings.form.phoneNumber">Phone Number</label>
+                    <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="{{'settings.form.phoneNumber.placeholder' | translate}}"
+                           required pattern="^[a-zA-Z0-9\-().\s]{10,15}$" ng-model="vm.settingsAccount.phoneNumber">
+                    <div ng-show="form.phoneNumber.$dirty && form.firstName.$invalid">
+                        <p class="help-block"
+                           ng-show="form.phoneNumber.$error.required" data-translate="settings.messages.validate.phone-number.required">
+                            Your first name is required.
+                        </p>
+                        <p class="help-block"
+                           ng-show="form.phoneNumber.$error.pattern" data-translate="settings.messages.validate.phone-number.pattern">
+                            Your first name is required to be at least 1 character.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="birthday" data-translate="settings.form.birthday">Birthday</label>
+                    <div class="input-group">
+                        <input id="birthday" type="text" class="form-control" name="birthday" uib-datepicker-popup="{{dateformat}}" ng-model="vm.settingsAccount.birthday"
+                               required dateInPast is-open="vm.datePickerOpenStatus.birthday" placeholder="{{'settings.form.birthday.placeholder' | translate}}"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                    <div ng-show="form.birthday.$dirty && form.birthday.$invalid">
+                        <p class="help-block"
+                           ng-show="form.birthday.$error.required" data-translate="settings.messages.validate.birthday.required">
+                            Your birthday is required.
+                        </p>
+                        <p class="help-block"
+                           ng-show="form.birthday.$error.dateInPast" data-translate="settings.messages.validate.birthday.past">
+                            Choose date in the past.
+                        </p>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="langKey" data-translate="settings.form.language">Language</label>
                     <select id="langKey" name="langKey" class="form-control" ng-model="vm.settingsAccount.langKey" ng-controller="JhiLanguageController as languageVm" ng-options="code as (code | findLanguageFromKey) for code in languageVm.languages"></select>
