@@ -60,11 +60,11 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @NotNull
     @Size(max = 50)
-    @Pattern(regexp = Constants.PHONE_REGEX)
+//    @Pattern(regexp = Constants.PHONE_REGEX)
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Past
+    @NotNull
     private LocalDate birthday;
 
     @NotNull

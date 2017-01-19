@@ -8,16 +8,17 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group">
-            <label data-translate="global.field.id">ID</label>
-            <input type="text" class="form-control" name="id"
-                   ng-model="vm.user.id" readonly>
-        </div>
+        <!--<div class="form-group">-->
+            <!--<label data-translate="global.field.id">ID</label>-->
+            <!--<input type="text" class="form-control" name="id"-->
+                   <!--ng-model="vm.user.id" readonly>-->
+        <!--</div>-->
 
         <div class="form-group">
             <label class="control-label" data-translate="userManagement.login">Login</label>
             <input type="text" class="form-control" name="login"
-                   ng-model="vm.user.login" ng-required="vm.user.id == null" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/">
+                   ng-model="vm.user.login" ng-required="vm.user.id == null" ng-minlength=1 ng-maxlength=50
+                   ng-pattern="/^[_'.@A-Za-z0-9-]*$/">
 
             <div ng-show="editForm.login.$invalid">
                 <p class="help-block"
@@ -30,12 +31,22 @@
                    translate-value-max="50">
                     This field cannot be longer than 50 characters.
                 </p>
+
+                <p class="help-block"
+                   ng-show="editForm.login.$error.pattern" data-translate="entity.validation.login">
+                    This field is required.
+                </p>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="userManagement.firstName">First Name</label>
             <input type="text" class="form-control" name="firstName"
-                   ng-model="vm.user.firstName" ng-maxlength="50">
+                   ng-model="vm.user.firstName" ng-maxlength="50" required>
+
+            <p class="help-block"
+               ng-show="editForm.firstName.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
 
             <div ng-show="editForm.firstName.$invalid">
                 <p class="help-block"
@@ -48,7 +59,12 @@
         <div class="form-group">
             <label data-translate="userManagement.lastName">Last Name</label>
             <input type="text" class="form-control" name="lastName"
-                   ng-model="vm.user.lastName" ng-maxlength="50">
+                   ng-model="vm.user.lastName" ng-maxlength="50" required>
+
+            <p class="help-block"
+               ng-show="editForm.lastName.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
 
             <div ng-show="editForm.lastName.$invalid">
                 <p class="help-block"
@@ -81,11 +97,51 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="activated">
-                <input ng-disabled="vm.user.id === null" type="checkbox" id="activated" name="activated" ng-model="vm.user.activated">
-                <span data-translate="userManagement.activated">Activated</span>
-            </label>
+            <label class="control-label" data-translate="userManagement.phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" ng-model="vm.user.phoneNumber"
+                   required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"
+                   placeholder="{{'global.messages.validate.phonenumber.placeholder' | translate}}"/>
+
+            <div ng-show="editForm.phoneNumber.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.phoneNumber.$error.required" data-translate="global.messages.validate.phonenumber.required">
+                    Your phone number is required
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.phoneNumber.$error.pattern" data-translate="global.messages.validate.phonenumber.pattern">
+                    Enter valid phone number
+                </p>
+            </div>
         </div>
+        <div class="form-group">
+            <label class="control-label" for="birthday" data-translate="userManagement.birthday">Birthday</label>
+            <div class="input-group">
+                <input id="birthday" type="text" class="form-control" name="birthday" uib-datepicker-popup="{{dateformat}}"
+                       required dateInPast is-open="vm.datePickerOpenStatus.birthday" ng-model="vm.user.birthday"
+                       placeholder="{{'global.messages.validate.birthday.placeholder' | translate}}"/>
+                <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </div>
+
+            <div ng-show="editForm.birthday.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.birthday.$error.required" data-translate="global.messages.validate.birthday.required">
+                    Your birthday is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.birthday.$error.dateInPast" data-translate="global.messages.validate.phonenumber.required">
+                    Choose date in the past.
+                </p>
+            </div>
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label for="activated">-->
+                <!--<input ng-disabled="vm.user.id === null" type="checkbox" id="activated" name="activated" ng-model="vm.user.activated">-->
+                <!--<span data-translate="userManagement.activated">Activated</span>-->
+            <!--</label>-->
+        <!--</div>-->
 
         <div class="form-group">
             <label data-translate="userManagement.langKey">Lang Key</label>

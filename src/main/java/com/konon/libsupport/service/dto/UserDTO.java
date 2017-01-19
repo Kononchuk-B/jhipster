@@ -33,10 +33,10 @@ public class UserDTO {
     private String email;
 
     @Size(max = 50)
-    @Pattern(regexp = Constants.PHONE_REGEX)
+//    @Pattern(regexp = Constants.PHONE_REGEX)
     private String phoneNumber;
 
-    @Past
+//    @Past
     private LocalDate birthday;
 
     private boolean activated = false;

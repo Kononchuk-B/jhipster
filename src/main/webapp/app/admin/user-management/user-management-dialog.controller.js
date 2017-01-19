@@ -15,7 +15,14 @@
         vm.languages = null;
         vm.save = save;
         vm.user = entity;
+        vm.datePickerOpenStatus = {};
+        vm.openCalendar = openCalendar;
 
+        vm.datePickerOpenStatus.birthday = false;
+
+        function openCalendar (date) {
+            vm.datePickerOpenStatus[date] = true;
+        }
 
         JhiLanguageService.getAll().then(function (languages) {
             vm.languages = languages;

@@ -60,21 +60,31 @@
             },
             "validate": {
                 "newpassword": {
-                    "required": "Your password is required.",
-                    "minlength": "Your password is required to be at least 4 characters.",
-                    "maxlength": "Your password cannot be longer than 50 characters.",
+                    "required": "Your password is required",
+                    "minlength": "Your password is required to be at least 4 characters",
+                    "maxlength": "Your password cannot be longer than 50 characters",
                     "strength": "Password strength:"
                 },
                 "confirmpassword": {
-                    "required": "Your confirmation password is required.",
-                    "minlength": "Your confirmation password is required to be at least 4 characters.",
-                    "maxlength": "Your confirmation password cannot be longer than 50 characters."
+                    "required": "Your confirmation password is required",
+                    "minlength": "Your confirmation password is required to be at least 4 characters",
+                    "maxlength": "Your confirmation password cannot be longer than 50 characters"
                 },
                 "email": {
-                    "required": "Your e-mail is required.",
-                    "invalid": "Your e-mail is invalid.",
-                    "minlength": "Your e-mail is required to be at least 5 characters.",
-                    "maxlength": "Your e-mail cannot be longer than 50 characters."
+                    "required": "Your e-mail is required",
+                    "invalid": "Your e-mail is invalid",
+                    "minlength": "Your e-mail is required to be at least 5 characters",
+                    "maxlength": "Your e-mail cannot be longer than 50 characters"
+                },
+                "phonenumber" : {
+                    "pattern": "Enter valid phone number",
+                    "required": "Your phone number is required",
+                    "placeholder": "Phone number format: XXX-XXX-XXXX"
+                },
+                "birthday": {
+                    "past": "Choose date in the past",
+                    "required": "Your birthday is required",
+                    "placeholder": "Date format: yyyy-MM-dd"
                 }
             }
         },
@@ -105,16 +115,17 @@
             "title": "Confirm delete operation"
         },
         "validation": {
-            "required": "This field is required.",
-            "minlength": "This field is required to be at least {{ min }} characters.",
-            "maxlength": "This field cannot be longer than {{ max }} characters.",
-            "min": "This field should be more than {{ min }}.",
-            "max": "This field cannot be more than {{ max }}.",
-            "minbytes": "This field should be more than {{ min }} bytes.",
-            "maxbytes": "This field cannot be more than {{ max }} bytes.",
-            "pattern": "This field should follow pattern {{ pattern }}.",
-            "number": "This field should be a number.",
-            "datetimelocal": "This field should be a date and time."
+            "required": "This field is required",
+            "minlength": "This field is required to be at least {{ min }} characters",
+            "maxlength": "This field cannot be longer than {{ max }} characters",
+            "min": "This field should be more than {{ min }}",
+            "max": "This field cannot be more than {{ max }}",
+            "minbytes": "This field should be more than {{ min }} bytes",
+            "maxbytes": "This field cannot be more than {{ max }} bytes",
+            "pattern": "This field should follow pattern {{ pattern }}",
+            "number": "This field should be a number",
+            "datetimelocal": "This field should be a date and time",
+            "login": "This field should contain only english letters or numbers"
         }
     },
     "error": {

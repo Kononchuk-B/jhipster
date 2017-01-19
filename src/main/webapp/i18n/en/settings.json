@@ -34,7 +34,7 @@
                     "past": "Choose date in the past",
                     "required": "Your birthday is required"
                 },
-                "phone-number" : {
+                "phonenumber" : {
                     "pattern": "Enter valid phone number",
                     "required": "Your phone number is required"
                 }

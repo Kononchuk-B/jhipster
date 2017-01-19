@@ -3,13 +3,13 @@
         "home": {
             "title": "Користувачі",
             "createLabel": "Додати нового користувача",
-            "createOrEditLabel": "редагування користувача"
+            "createOrEditLabel": "Редагування користувача"
         },
-        "created": "Створено нового користувача з ідентифікатором {{ param }}",
-        "updated": "Користувач з ідентифікатором {{ param }} оновлений",
-        "deleted": "Користувач з ідентифікатором {{ param }} видалений",
+        "created": "Створено нового користувача з ідентифікатором <b>{{ param }}</b>",
+        "updated": "Користувач з ідентифікатором <b>{{ param }}</b> оновлений",
+        "deleted": "Користувач з ідентифікатором <b>{{ param }}</b> видалений",
         "delete": {
-            "question": "Ви впевнені, що хочете видалити користувача {{ login }}?"
+            "question": "Ви впевнені, що хочете видалити користувача <b>{{ login }}</b>?"
         },
         "detail": {
             "title": "Користувач"
@@ -17,14 +17,18 @@
         "login": "Логін",
         "firstName": "Ім'я",
         "lastName": "Прізвище",
-        "email": "e-mail",
+        "email": "Email",
+        "phoneNumber": "Телефон",
+        "birthday": "Дата народження",
+        "status": "Статус",
+        "roles": "Роль",
         "activated": "Активний",
-        "deactivated": "Не ативний",
+        "deactivated": "Не активний",
         "profiles": "Профілі",
         "langKey": "Мова",
         "createdBy": "Створив",
-        "createdDate": "Дата створення",
-        "lastModifiedBy": "Змінено",
+        "createdDate": "Створений",
+        "lastModifiedBy": "Змінив",
         "lastModifiedDate": "Дата зміни"
     }
 }

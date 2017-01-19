@@ -79,11 +79,11 @@
                            required pattern="^[a-zA-Z0-9\-().\s]{10,15}$" ng-model="vm.settingsAccount.phoneNumber">
                     <div ng-show="form.phoneNumber.$dirty && form.firstName.$invalid">
                         <p class="help-block"
-                           ng-show="form.phoneNumber.$error.required" data-translate="settings.messages.validate.phone-number.required">
+                           ng-show="form.phoneNumber.$error.required" data-translate="settings.messages.validate.phonenumber.required">
                             Your first name is required.
                         </p>
                         <p class="help-block"
-                           ng-show="form.phoneNumber.$error.pattern" data-translate="settings.messages.validate.phone-number.pattern">
+                           ng-show="form.phoneNumber.$error.pattern" data-translate="settings.messages.validate.phonenumber.pattern">
                             Your first name is required to be at least 1 character.
                         </p>
                     </div>
