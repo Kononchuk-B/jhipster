@@ -2,16 +2,16 @@
     "libSupportApp": {
         "book" : {
             "home": {
-                "title": "Books",
-                "createLabel": "Создать новый Book",
-                "createOrEditLabel": "Создать или отредактировать Book",
-                "search": "Найти Book"
+                "title": "Книги",
+                "createLabel": "Додати нову книгу",
+                "createOrEditLabel": "Редагування книги",
+                "search": "Найти книгу"
             },
             "created": "Новый Book создан с идентификатором {{ param }}",
-            "updated": "Book обновлен с идентификатором {{ param }}",
-            "deleted": "Book удален с идентификатором {{ param }}",
+            "updated": "Книгу з ідентифікатором <b>{{ param }}</b> оновлено",
+            "deleted": "Книгу з ідентифікатором <b>{{ param }}</b> видалено",
             "delete": {
-                "question": "Вы уверены что хотите удалить Book {{ id }}?"
+                "question": "Ви впевнені, що хочете видалити цю книгу <b>{{ id }}</b>?"
             },
             "detail": {
                 "title": "Book"

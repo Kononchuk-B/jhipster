@@ -7,11 +7,11 @@
                 "createOrEditLabel": "Create or edit a Genre",
                 "search": "Search for Genre"
             },
-            "created": "A new Genre is created with identifier {{ param }}",
-            "updated": "A Genre is updated with identifier {{ param }}",
-            "deleted": "A Genre is deleted with identifier {{ param }}",
+            "created": "A new Genre is created with identifier <b>{{ param }}</b>",
+            "updated": "A Genre with identifier <b>{{ param }}</b> is updated ",
+            "deleted": "A Genre with identifier <b>{{ param }}</b> is deleted ",
             "delete": {
-                "question": "Are you sure you want to delete Genre {{ id }}?"
+                "question": "Are you sure you want to delete Genre <b>{{ id }}</b>?"
             },
             "detail": {
                 "title": "Genre"

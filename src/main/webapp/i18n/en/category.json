@@ -7,11 +7,11 @@
                 "createOrEditLabel": "Create or edit a Category",
                 "search": "Search for Category"
             },
-            "created": "A new Category is created with identifier {{ param }}",
-            "updated": "A Category is updated with identifier {{ param }}",
-            "deleted": "A Category is deleted with identifier {{ param }}",
+            "created": "A new Category is created with identifier <b>{{ param }}</b>",
+            "updated": "A Category with identifier <b>{{ param }}</b> is updated ",
+            "deleted": "A Category with identifier <b>{{ param }}</b> is deleted",
             "delete": {
-                "question": "Are you sure you want to delete Category {{ id }}?"
+                "question": "Are you sure you want to delete Category <b>{{ id }}<b>?"
             },
             "detail": {
                 "title": "Category"

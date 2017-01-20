@@ -7,11 +7,11 @@
                 "createOrEditLabel": "Create or edit a Feedback",
                 "search": "Search for Feedback"
             },
-            "created": "A new Feedback is created with identifier {{ param }}",
-            "updated": "A Feedback is updated with identifier {{ param }}",
-            "deleted": "A Feedback is deleted with identifier {{ param }}",
+            "created": "A new Feedback is created with identifier <b>{{ param }}</b>",
+            "updated": "A Feedback with identifier <b>{{ param }}</b> is updated ",
+            "deleted": "A Feedback with identifier <b>{{ param }}</b> is deleted",
             "delete": {
-                "question": "Are you sure you want to delete Feedback {{ id }}?"
+                "question": "Are you sure you want to delete Feedback <b>{{ id }}</b>?"
             },
             "detail": {
                 "title": "Feedback"

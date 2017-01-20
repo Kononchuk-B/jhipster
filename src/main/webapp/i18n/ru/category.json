@@ -2,22 +2,22 @@
     "libSupportApp": {
         "category" : {
             "home": {
-                "title": "Categories",
-                "createLabel": "Создать новый Category",
-                "createOrEditLabel": "Создать или отредактировать Category",
-                "search": "Найти Category"
+                "title": "Категорії",
+                "createLabel": "Додати нову категорію",
+                "createOrEditLabel": "Редагування категорії",
+                "search": "Найти категорію"
             },
-            "created": "Новый Category создан с идентификатором {{ param }}",
-            "updated": "Category обновлен с идентификатором {{ param }}",
-            "deleted": "Category удален с идентификатором {{ param }}",
+            "created": "Створено нову категорію з ідентифікатором <b>{{ param }}</b>",
+            "updated": "Категорію з ідентифікатором <b>{{ param }}</b> оновлено",
+            "deleted": "Категорію з ідентифікатором <b>{{ param }}</b> видалено",
             "delete": {
-                "question": "Вы уверены что хотите удалить Category {{ id }}?"
+                "question": "Ви впевнені, що хочете видалити цю категорію <b>{{ id }}</b>?"
             },
             "detail": {
-                "title": "Category"
+                "title": "Категорія"
             },
-            "type": "Type",
-            "book": "Book"
+            "type": "Тип",
+            "book": "Книга"
         }
     }
 }

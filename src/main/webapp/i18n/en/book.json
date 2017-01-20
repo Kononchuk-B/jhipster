@@ -7,11 +7,11 @@
                 "createOrEditLabel": "Create or edit a Book",
                 "search": "Search for Book"
             },
-            "created": "A new Book is created with identifier {{ param }}",
-            "updated": "A Book is updated with identifier {{ param }}",
-            "deleted": "A Book is deleted with identifier {{ param }}",
+            "created": "A new Book is created with identifier <b>{{ param }}</b>",
+            "updated": "A Book with identifier <b>{{ param }}</b> is updated ",
+            "deleted": "A Book with identifier <b>{{ param }}</b> is deleted ",
             "delete": {
-                "question": "Are you sure you want to delete Book {{ id }}?"
+                "question": "Are you sure you want to delete Book <b>{{ id }}</b>?"
             },
             "detail": {
                 "title": "Book"
