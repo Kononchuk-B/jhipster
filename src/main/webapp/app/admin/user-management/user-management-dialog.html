@@ -3,7 +3,9 @@
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myUserLabel" data-translate="userManagement.home.createOrEditLabel">
+        <h4 class="modal-title" id="myUserLabelCreate" ng-if="vm.user.id == null" data-translate="userManagement.home.createLabel">
+            Create or edit a User</h4>
+        <h4 class="modal-title" id="myUserLabelEdit" ng-if="vm.user.id != null" data-translate="userManagement.home.editLabel">
             Create or edit a User</h4>
     </div>
     <div class="modal-body">
@@ -104,8 +106,8 @@
 
             <div ng-show="editForm.phoneNumber.$invalid">
                 <p class="help-block"
-                   ng-show="editForm.phoneNumber.$error.required" data-translate="global.messages.validate.phonenumber.required">
-                    Your phone number is required
+                   ng-show="editForm.phoneNumber.$error.required" data-translate="entity.validation.required">
+                    This field is required.
                 </p>
                 <p class="help-block"
                    ng-show="editForm.phoneNumber.$error.pattern" data-translate="global.messages.validate.phonenumber.pattern">
@@ -126,8 +128,8 @@
 
             <div ng-show="editForm.birthday.$invalid">
                 <p class="help-block"
-                   ng-show="editForm.birthday.$error.required" data-translate="global.messages.validate.birthday.required">
-                    Your birthday is required.
+                   ng-show="editForm.birthday.$error.required" data-translate="entity.validation.required">
+                    This field is required.
                 </p>
                 <p class="help-block"
                    ng-show="editForm.birthday.$error.dateInPast" data-translate="global.messages.validate.phonenumber.required">

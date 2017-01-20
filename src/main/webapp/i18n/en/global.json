@@ -82,6 +82,7 @@
                     "placeholder": "Phone number format: XXX-XXX-XXXX"
                 },
                 "birthday": {
+                    "pattern": "Invalid date format",
                     "past": "Choose date in the past",
                     "required": "Your birthday is required",
                     "placeholder": "Date format: yyyy-MM-dd"

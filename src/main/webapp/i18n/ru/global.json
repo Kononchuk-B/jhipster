@@ -72,7 +72,7 @@
                 },
                 "email": {
                     "required": "Укажіть свій e-mail",
-                    "invalid": "E-mail не правильний",
+                    "invalid": "E-mail формат не вірний",
                     "minlength": "Довжина e-mail повинна бути хоча б 5 символів",
                     "maxlength": "E-mail не може бути довший ніж 50 символів"
                 },
@@ -82,6 +82,7 @@
                     "placeholder": "Формат телефону: XXX-XXX-XXXX"
                 },
                 "birthday": {
+                    "pattern": "Хибний формат дати",
                     "past": "Виберіть дату в минулому",
                     "required": "Вкажіть дату вашого народження",
                     "placeholder": "Формат дати: yyyy-MM-dd"
