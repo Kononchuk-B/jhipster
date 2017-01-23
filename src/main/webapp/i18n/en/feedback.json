@@ -16,7 +16,7 @@
             "detail": {
                 "title": "Feedback"
             },
-            "stars": "Stars",
+            "stars": "Stars: ",
             "dateOfPublish": "Date Of Publish",
             "description": "Description",
             "book": "Book",

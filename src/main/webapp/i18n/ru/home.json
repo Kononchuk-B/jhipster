@@ -3,7 +3,7 @@
         "title": "Вітаємо вас у Library Support System!",
         "subtitle": "Це ваша домашня сторінка",
         "logged": {
-            "message": "Ви ввійшли як \"{{username}}\"."
+            "message": "Ви ввійшли як <b>\"{{username}}\"</b>"
         },
         "question": "Если у Вас возникли вопросы по JHipster:",
         "link": {

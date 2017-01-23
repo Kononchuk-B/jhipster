@@ -20,6 +20,7 @@
         vm.predicate = 'id';
         vm.reset = reset;
         vm.reverse = true;
+        vm.checkStars = checkStars;
 
         loadAll();
 
@@ -59,6 +60,10 @@
         function loadPage(page) {
             vm.page = page;
             loadAll();
+        }
+
+        function checkStars (data) {
+            return data < 1;
         }
     }
 })();
