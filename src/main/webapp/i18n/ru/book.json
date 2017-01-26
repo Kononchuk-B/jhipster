@@ -4,10 +4,10 @@
             "home": {
                 "title": "Книги",
                 "createLabel": "Додати нову книгу",
-                "createOrEditLabel": "Редагування книги",
+                "editLabel": "Редагування книги",
                 "search": "Найти книгу"
             },
-            "created": "Новый Book создан с идентификатором {{ param }}",
+            "created": "Створено нову книгу з ідентифікатором <b>{{ param }}</b>",
             "updated": "Книгу з ідентифікатором <b>{{ param }}</b> оновлено",
             "deleted": "Книгу з ідентифікатором <b>{{ param }}</b> видалено",
             "delete": {
@@ -16,17 +16,21 @@
             "detail": {
                 "title": "Book"
             },
-            "name": "Name",
-            "author": "Author",
-            "edition": "Edition",
-            "numberOfPages": "Number Of Pages",
-            "yearOfPublish": "Year Of Publish",
-            "isAvailable": "Is Available",
-            "bookReservation": "Book Reservation",
-            "bookCopy": "Book Copy",
-            "feedback": "Feedback",
-            "genre": "Genre",
-            "category": "Category"
+            "action": {
+                "feedback": "залишити відгук",
+                "reservation": ""
+            },
+            "name": "Ім'я",
+            "author": "Автор",
+            "edition": "Видавництво",
+            "numberOfPages": "Кількість сторінок",
+            "yearOfPublish": "Рік публікації",
+            "isAvailable": "В наявності",
+            "bookReservation": "Резервація книги",
+            "bookCopy": "Екземпляри книги",
+            "feedback": "Відгуки",
+            "genre": "Жанр",
+            "category": "Категорія"
         }
     }
 }

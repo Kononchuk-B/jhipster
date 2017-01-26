@@ -1,7 +1,7 @@
 <div>
     <h2 data-translate="libSupportApp.book.home.title">Books</h2>
     <jhi-alert></jhi-alert>
-    <div class="container-fluid">
+    <div class="container-fluid" has-authority="ROLE_ADMIN">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="book.new" >
@@ -18,7 +18,7 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
-                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="id" has-authority="ROLE_ADMIN"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span data-translate="libSupportApp.book.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="author"><span data-translate="libSupportApp.book.author">Author</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="edition"><span data-translate="libSupportApp.book.edition">Edition</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -30,7 +30,7 @@
             </thead>
             <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
                 <tr ng-repeat="book in vm.books track by book.id">
-                    <td><a ui-sref="book-detail({id:book.id})">{{book.id}}</a></td>
+                    <td has-authority="ROLE_ADMIN"><a ui-sref="book-detail({id:book.id})">{{book.id}}</a></td>
                     <td>{{book.name}}</td>
                     <td>{{book.author}}</td>
                     <td>{{book.edition}}</td>
@@ -45,13 +45,19 @@
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
                             </button>
-                            <button type="submit"
+                            <button type="submit" has-authority="ROLE_USER"
+                                    ui-sref="feedback.new"
+                                    class="btn btn-warning btn-sm">
+                                <span class="glyphicon glyphicon glyphicon-plus"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="libSupportApp.book.action.feedback"></span>
+                            </button>
+                            <button type="submit" has-authority="ROLE_ADMIN"
                                     ui-sref="book.edit({id:book.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
                             </button>
-                            <button type="submit"
+                            <button type="submit" has-authority="ROLE_ADMIN"
                                     ui-sref="book.delete({id:book.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>

@@ -4,7 +4,7 @@
             "home": {
                 "title": "Books",
                 "createLabel": "Create a new Book",
-                "createOrEditLabel": "Create or edit a Book",
+                "editLabel": "Edit a Book",
                 "search": "Search for Book"
             },
             "created": "A new Book is created with identifier <b>{{ param }}</b>",
@@ -15,6 +15,10 @@
             },
             "detail": {
                 "title": "Book"
+            },
+            "action": {
+                "feedback": "Add a feedback",
+                "reservation": ""
             },
             "name": "Name",
             "author": "Author",

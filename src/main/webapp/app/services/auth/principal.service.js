@@ -17,7 +17,8 @@
             hasAuthority: hasAuthority,
             identity: identity,
             isAuthenticated: isAuthenticated,
-            isIdentityResolved: isIdentityResolved
+            isIdentityResolved: isIdentityResolved,
+            hasOnlyAuthority: hasOnlyAuthority
         };
 
         return service;
@@ -39,6 +40,20 @@
             }
 
             return false;
+        }
+
+        function hasOnlyAuthority (authority) {
+            if (!_authenticated) {
+                return $q.when(false);
+            }
+
+            return this.identity().then(function(_id) {
+                 if(_id.authorities && _id.authorities.indexOf(authority) !== -1 && _id.authorities.length  < 2) {
+                     return true;
+                 }
+            }, function(){
+                return false;
+            });
         }
 
         function hasAuthority (authority) {

@@ -8,7 +8,7 @@
             "entities": {
                 "main": "Entities",
                 "feedback": "Feedback",
-                "book": "Book",
+                "book": "Books",
                 "bookCopy": "Book Copy",
                 "bookReservation": "Book Reservation",
                 "genre": "Genre",

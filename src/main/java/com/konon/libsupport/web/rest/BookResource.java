@@ -2,6 +2,7 @@ package com.konon.libsupport.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.konon.libsupport.domain.Book;
+import com.konon.libsupport.security.AuthoritiesConstants;
 import com.konon.libsupport.service.BookService;
 import com.konon.libsupport.web.rest.util.HeaderUtil;
 import com.konon.libsupport.web.rest.util.PaginationUtil;
@@ -14,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -31,7 +33,7 @@ import java.util.Optional;
 public class BookResource {
 
     private final Logger log = LoggerFactory.getLogger(BookResource.class);
-        
+
     @Inject
     private BookService bookService;
 
@@ -44,6 +46,7 @@ public class BookResource {
      */
     @PostMapping("/books")
     @Timed
+    @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<Book> createBook(@Valid @RequestBody Book book) throws URISyntaxException {
         log.debug("REST request to save Book : {}", book);
         if (book.getId() != null) {
@@ -66,6 +69,7 @@ public class BookResource {
      */
     @PutMapping("/books")
     @Timed
+    @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<Book> updateBook(@Valid @RequestBody Book book) throws URISyntaxException {
         log.debug("REST request to update Book : {}", book);
         if (book.getId() == null) {
@@ -120,6 +124,7 @@ public class BookResource {
      */
     @DeleteMapping("/books/{id}")
     @Timed
+    @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
         log.debug("REST request to delete Book : {}", id);
         bookService.delete(id);

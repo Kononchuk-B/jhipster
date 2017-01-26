@@ -5,7 +5,8 @@
                 "title": "Feedbacks",
                 "createLabel": "Create a new Feedback",
                 "createOrEditLabel": "Create or edit a Feedback",
-                "search": "Search for Feedback"
+                "search": "Search for Feedback",
+                "user" : "My feedbacks"
             },
             "created": "A new Feedback is created with identifier <b>{{ param }}</b>",
             "updated": "A Feedback with identifier <b>{{ param }}</b> is updated ",
@@ -16,7 +17,7 @@
             "detail": {
                 "title": "Feedback"
             },
-            "stars": "Stars: ",
+            "stars": "Stars ",
             "dateOfPublish": "Date Of Publish",
             "description": "Description",
             "book": "Book",
