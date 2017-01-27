@@ -20,7 +20,7 @@
                         <span class="hidden-sm" data-translate="global.menu.home">Home</span>
                     </a>
                 </li>
-                <li ui-sref-active="active" has-authority="ROLE_USER">
+                <li ui-sref-active="active" has-only-authority="ROLE_USER">
                     <a ui-sref="book" ng-click="vm.collapseNavbar()">
                         <span class="glyphicon glyphicon-book"></span>
                         <span data-translate="global.menu.entities.book">Books</span>

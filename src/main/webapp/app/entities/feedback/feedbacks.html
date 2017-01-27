@@ -19,7 +19,7 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
-                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th has-authority="ROLE_ADMIN" jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="stars"><span data-translate="libSupportApp.feedback.stars">Stars</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dateOfPublish"><span data-translate="libSupportApp.feedback.dateOfPublish">Date Of Publish</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="description"><span data-translate="libSupportApp.feedback.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -30,7 +30,7 @@
             </thead>
             <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
                 <tr ng-repeat="feedback in vm.feedbacks track by feedback.id">
-                    <td><a ui-sref="feedback-detail({id:feedback.id})">{{feedback.id}}</a></td>
+                    <td has-authority="ROLE_ADMIN"><a ui-sref="feedback-detail({id:feedback.id})">{{feedback.id}}</a></td>
                     <td>{{feedback.stars}}</td>
                         <td>{{feedback.dateOfPublish | date:'mediumDate'}}</td>
                     <td>{{feedback.description | limitTo: 25 : 0 }}<span ng-if="feedback.description.length > 25">....</span></td>
