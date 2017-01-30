@@ -46,3 +46,7 @@ th, td, .title-center{
 :focus {
     outline: 0 !important;
 }
+
+.break-word {
+    word-wrap: break-word;
+}

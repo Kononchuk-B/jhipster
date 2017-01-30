@@ -1,4 +1,4 @@
-<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation >
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -41,32 +41,12 @@
                 </p>
             </div>
         </div>
-        <!--<div class="form-group">-->
-        <!--<label class="control-label" data-translate="libSupportApp.feedback.dateOfPublish"-->
-        <!--for="field_dateOfPublish">Date Of Publish</label>-->
-        <!--<div class="input-group">-->
-        <!--<span id="field_dateOfPublish" type="text" class="form-control" name="dateOfPublish"-->
-        <!--uib-datepicker-popup="{{dateformat}}" ng-model="vm.feedback.dateOfPublish"-->
-        <!--is-open="vm.datePickerOpenStatus.dateOfPublish"-->
-        <!--required>{{vm.today | date:'mediumDate'}}</span>-->
-        <!--<span class="input-group-btn">-->
-        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfPublish')"><i-->
-        <!--class="glyphicon glyphicon-calendar"></i></button>-->
-        <!--</span>-->
-        <!--</div>-->
-        <!--<div ng-show="editForm.dateOfPublish.$invalid">-->
-        <!--<p class="help-block"-->
-        <!--ng-show="editForm.dateOfPublish.$error.required" data-translate="entity.validation.required">-->
-        <!--This field is required.-->
-        <!--</p>-->
-        <!--</div>-->
-        <!--</div>-->
         <div class="form-group">
             <label class="control-label" data-translate="libSupportApp.feedback.description"
                    for="field_description">Description</label>
-            <input type="text" class="form-control" name="description" id="field_description"
+            <textarea type="text" class="form-control" name="description" id="field_description"
                    ng-model="vm.feedback.description"
-                   ng-minlength="10" ng-maxlength="255"/>
+                   ng-minlength="10" ng-maxlength="1000" rows="4"></textarea>
             <div ng-show="editForm.description.$invalid">
                 <p class="help-block"
                    ng-show="editForm.description.$error.minlength" data-translate="entity.validation.minlength"
@@ -75,39 +55,11 @@
                 </p>
                 <p class="help-block"
                    ng-show="editForm.description.$error.maxlength" data-translate="entity.validation.maxlength"
-                   translate-value-max="255">
-                    This field cannot be longer than 255 characters.
+                   translate-value-max="1000">
+                    This field cannot be longer than 1000 characters.
                 </p>
             </div>
         </div>
-
-        <!--<div class="form-group">-->
-        <!--<label data-translate="libSupportApp.feedback.book" for="field_book">Book</label>-->
-        <!--<select class="form-control" id="field_book" name="book" ng-model="vm.feedback.book"-->
-        <!--ng-options="book as book.name for book in vm.books track by book.id" required>-->
-        <!--<option value=""></option>-->
-        <!--</select>-->
-        <!--</div>-->
-        <!--<div ng-show="editForm.book.$invalid">-->
-        <!--<p class="help-block"-->
-        <!--ng-show="editForm.book.$error.required" data-translate="entity.validation.required">-->
-        <!--This field is required.-->
-        <!--</p>-->
-        <!--</div>-->
-
-        <!--<div class="form-group">-->
-        <!--<label data-translate="libSupportApp.feedback.user" for="field_user">User</label>-->
-        <!--<select class="form-control" id="field_user" name="user" ng-model="vm.feedback.user"-->
-        <!--ng-options="user as user.login for user in vm.users track by user.id">-->
-        <!--<option value=""></option>-->
-        <!--</select>-->
-        <!--</div>-->
-        <!--<div ng-show="editForm.user.$invalid">-->
-        <!--<p class="help-block"-->
-        <!--ng-show="editForm.user.$error.required" data-translate="entity.validation.required">-->
-        <!--This field is required.-->
-        <!--</p>-->
-        <!--</div>-->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

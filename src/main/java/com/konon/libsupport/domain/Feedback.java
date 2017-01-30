@@ -33,8 +33,8 @@ public class Feedback implements Serializable {
     @Column(name = "date_of_publish", nullable = false)
     private LocalDate dateOfPublish;
 
-    @Size(min = 10, max = 255)
-    @Column(name = "description", length = 255)
+    @Size(min = 10, max = 1000)
+    @Column(name = "description", length = 1000)
     private String description;
 
     @ManyToOne

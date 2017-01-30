@@ -8,10 +8,6 @@
         <dd>
             <span>{{vm.feedback.stars}}</span>
         </dd>
-        <dt><span data-translate="libSupportApp.feedback.description">Description</span></dt>
-        <dd>
-            <span>{{vm.feedback.description}}</span>
-        </dd>
         <dt><span data-translate="libSupportApp.feedback.book">Book</span></dt>
         <dd>
             <a ui-sref="book-detail({id:vm.feedback.book.id})">{{vm.feedback.book.name}}</a>
@@ -23,6 +19,10 @@
         <dt><span data-translate="libSupportApp.feedback.dateOfPublish">Date Of Publish</span></dt>
         <dd>
             <span>{{vm.feedback.dateOfPublish | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="libSupportApp.feedback.description">Description</span></dt>
+        <dd>
+            <span class="break-word">{{vm.feedback.description }}</span>
         </dd>
     </dl>
 
