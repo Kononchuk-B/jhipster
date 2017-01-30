@@ -46,7 +46,7 @@
                                 <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
                             </button>
                             <button type="submit" has-only-authority="ROLE_USER"
-                                    ui-sref="feedback.new"
+                                    ui-sref="feedback.new({bookId: book.id})"
                                     class="btn btn-warning btn-sm">
                                 <span class="glyphicon glyphicon glyphicon-plus"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="libSupportApp.book.action.feedback"></span>

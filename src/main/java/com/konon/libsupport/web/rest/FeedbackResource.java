@@ -18,6 +18,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -51,6 +52,7 @@ public class FeedbackResource {
      */
     @PostMapping("/feedbacks")
     @Timed
+    @Secured(AuthoritiesConstants.USER)
     public ResponseEntity<Feedback> createFeedback(@Valid @RequestBody Feedback feedback) throws URISyntaxException {
         log.debug("REST request to save Feedback : {}", feedback);
         if (feedback.getId() != null) {

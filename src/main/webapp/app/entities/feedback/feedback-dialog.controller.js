@@ -16,7 +16,13 @@
         vm.books = Book.query();
         vm.users = User.query();
         vm.today = new Date();
-        vm.currentUser = load;
+        vm.currentUser = null;
+        vm.currentBook = null;
+        vm.instantiateMainData = instantiateMainData;
+
+        function foo() {
+            console.log($stateParams.foo);
+        }
 
         $timeout(function () {
             angular.element('.form-group:eq(1)>input').focus();
@@ -26,26 +32,27 @@
             $uibModalInstance.dismiss('cancel');
         }
 
-        function load(login) {
-            User.get({login: login}, function (result) {
-                vm.user = result;
-            });
-        }
-
         Principal.identity().then(function (account) {
             User.get({login: account.login}, function (result) {
                 vm.currentUser = result;
             });
         });
 
-        function save() {
-            console.log(vm.feedback.user);
-            console.log(vm.currentUser);
+        Book.get({id: $stateParams.bookId}, function (result) {
+            vm.currentBook = result;
+        });
+
+        function instantiateMainData () {
+            vm.feedback.book = vm.currentBook;
             vm.feedback.user = vm.currentUser;
+        }
+
+        function save() {
             vm.isSaving = true;
             if (vm.feedback.id !== null) {
                 Feedback.update(vm.feedback, onSaveSuccess, onSaveError);
             } else {
+                vm.instantiateMainData();
                 Feedback.save(vm.feedback, onSaveSuccess, onSaveError);
             }
         }

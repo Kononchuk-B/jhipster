@@ -4,7 +4,7 @@
             "home": {
                 "title": "Feedbacks",
                 "createLabel": "Create a new Feedback",
-                "createOrEditLabel": "Create or edit a Feedback",
+                "editLabel": "Edit a Feedback",
                 "search": "Search for Feedback",
                 "user" : "My feedbacks"
             },
@@ -12,7 +12,15 @@
             "updated": "A Feedback with identifier <b>{{ param }}</b> is updated ",
             "deleted": "A Feedback with identifier <b>{{ param }}</b> is deleted",
             "delete": {
-                "question": "Are you sure you want to delete Feedback <b>{{ id }}</b>?"
+                "question": "Are you sure you want to delete feedback <b>{{ id }}</b>?"
+            },
+            "users": {
+                "created": "A new Feedback is created",
+                "updated": "The feedback is updated",
+                "deleted": "The feedback is deleted",
+                "delete": {
+                    "question": "Are you sure you want to delete this feedback?"
+                }
             },
             "detail": {
                 "title": "Feedback"
