@@ -50,3 +50,11 @@ th, td, .title-center{
 .break-word {
     word-wrap: break-word;
 }
+
+.glyphicon-ok {
+    color: #5bc0de;
+}
+
+.glyphicon-remove {
+    color: #337ab7;
+}

@@ -8,11 +8,16 @@
                 "createOrEditLabel": "Create or edit a Book Reservation",
                 "search": "Search for Book Reservation"
             },
-            "created": "A new Book Reservation is created with identifier <b>{{ param }}</b>",
-            "updated": "A Book Reservation with identifier <b>{{ param }}</b> is updated ",
-            "deleted": "A Book Reservation with identifier <b>{{ param }}</b> is deleted",
+            "created": "A new Book Reservation is created",
+            "updated": "The Book Reservation is updated",
+            "deleted": "The Book Reservation is deleted",
             "delete": {
-                "question": "Are you sure you want to delete Book Reservation <b>{{ id }}?</b>"
+                "question": "Are you sure you want to delete book reservation <b>{{ id }}</b>?"
+            },
+            "users": {
+                "delete": {
+                    "question": "Are you sure you want to delete this book reservation?"
+                }
             },
             "detail": {
                 "title": "Book Reservation"

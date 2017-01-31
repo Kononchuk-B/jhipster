@@ -21,9 +21,9 @@
                     <th jh-sort-by="id" has-authority="ROLE_ADMIN"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span data-translate="libSupportApp.book.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="author"><span data-translate="libSupportApp.book.author">Author</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="edition"><span data-translate="libSupportApp.book.edition">Edition</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="edition"><span data-translate="libSupportApp.book.edition">Edition</span> <span class="glyphicon glyphicon-sort"></span></th>-->
                     <th jh-sort-by="numberOfPages"><span data-translate="libSupportApp.book.numberOfPages">Number Of Pages</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="yearOfPublish"><span data-translate="libSupportApp.book.yearOfPublish">Year Of Publish</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="yearOfPublish"><span data-translate="libSupportApp.book.yearOfPublish">Year Of Publish</span> <span class="glyphicon glyphicon-sort"></span></th>-->
                     <th jh-sort-by="isAvailable"><span data-translate="libSupportApp.book.isAvailable">Is Available</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
@@ -31,12 +31,14 @@
             <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
                 <tr ng-repeat="book in vm.books track by book.id">
                     <td has-authority="ROLE_ADMIN"><a ui-sref="book-detail({id:book.id})">{{book.id}}</a></td>
-                    <td>{{book.name}}</td>
-                    <td>{{book.author}}</td>
-                    <td>{{book.edition}}</td>
+                    <td>{{book.name | limitTo : 50 : 0}}<span ng-if="book.name.length > 50">....</span></td>
+                    <td>{{book.author | limitTo : 20 : 0}}<span ng-if="book.author.length > 20">....</span></td>
+                    <!--<td>{{book.edition}}</td>-->
                     <td>{{book.numberOfPages}}</td>
-                        <td>{{book.yearOfPublish | date:'mediumDate'}}</td>
-                    <td>{{book.isAvailable}}</td>
+                    <!--<td>{{book.yearOfPublish | date:'mediumDate'}}</td>-->
+                    <td><span ng-if="book.isAvailable == true" class="glyphicon glyphicon-ok"></span>
+                        <span ng-if="book.isAvailable == false" class="glyphicon glyphicon-remove"></span>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
@@ -51,12 +53,12 @@
                                 <span class="glyphicon glyphicon-bookmark"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="libSupportApp.book.action.reservation"></span>
                             </button>
-                            <button type="submit" has-only-authority="ROLE_USER"
-                                    ui-sref="feedback.new({bookId: book.id})"
-                                    class="btn btn-warning btn-sm">
-                                <span class="glyphicon glyphicon glyphicon-plus"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="libSupportApp.book.action.feedback"></span>
-                            </button>
+                            <!--<button type="submit" has-only-authority="ROLE_USER"-->
+                                    <!--ui-sref="feedback.new({bookId: book.id})"-->
+                                    <!--class="btn btn-warning btn-sm">-->
+                                <!--<span class="glyphicon glyphicon glyphicon-plus"></span>-->
+                                <!--<span class="hidden-xs hidden-sm" data-translate="libSupportApp.book.action.feedback"></span>-->
+                            <!--</button>-->
                             <button type="submit" has-authority="ROLE_ADMIN"
                                     ui-sref="book.edit({id:book.id})"
                                     class="btn btn-primary btn-sm">

@@ -6,51 +6,61 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
-                    <th has-authority="ROLE_ADMIN" jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="stars"><span data-translate="libSupportApp.feedback.stars">Stars</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dateOfPublish"><span data-translate="libSupportApp.feedback.dateOfPublish">Date Of Publish</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="description"><span data-translate="libSupportApp.feedback.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="book.id"><span data-translate="libSupportApp.feedback.book">Book</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th has-authority="ROLE_ADMIN" jh-sort-by="user.login"><span data-translate="libSupportApp.feedback.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                <th has-authority="ROLE_ADMIN" jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="stars"><span data-translate="libSupportApp.feedback.stars">Stars</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="dateOfPublish"><span data-translate="libSupportApp.feedback.dateOfPublish">Date Of Publish</span>
+                    <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="book.id"><span data-translate="libSupportApp.feedback.book">Book</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="description"><span
+                    data-translate="libSupportApp.feedback.description">Description</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th has-authority="ROLE_ADMIN" jh-sort-by="user.login"><span
+                    data-translate="libSupportApp.feedback.user">User</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
-                <tr ng-repeat="feedback in vm.feedbacks track by feedback.id">
-                    <td has-authority="ROLE_ADMIN"><a ui-sref="feedback-detail({id:feedback.id})">{{feedback.id}}</a></td>
-                    <td>{{feedback.stars}}</td>
-                        <td>{{feedback.dateOfPublish | date:'mediumDate'}}</td>
-                    <td>{{feedback.description | limitTo: 25 : 0 }}<span ng-if="feedback.description.length > 25">....</span></td>
-                    <td>
-                        <a ui-sref="book-detail({id:feedback.book.id})">{{feedback.book.name}}</a>
-                    </td>
-                    <td has-authority="ROLE_ADMIN">
-                        {{feedback.user.login}}
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="feedback-detail({id:feedback.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit" has-only-authority="ROLE_USER"
-                                    ui-sref="feedback.edit({id:feedback.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="feedback.delete({id:feedback.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            <tr ng-repeat="feedback in vm.feedbacks track by feedback.id">
+                <td has-authority="ROLE_ADMIN"><a ui-sref="feedback-detail({id:feedback.id})">{{feedback.id}}</a></td>
+                <td>{{feedback.stars}}</td>
+                <td>{{feedback.dateOfPublish | date:'mediumDate'}}</td>
+                <td>
+                    <a ui-sref="book-detail({id:feedback.book.id})">{{feedback.book.name | limitTo: 40 : 0}}<span
+                        ng-if="feedback.book.name.length > 40">....</span></a>
+                </td>
+                <td>{{feedback.description | limitTo: 20 : 0 }}<span
+                    ng-if="feedback.description.length > 20">....</span></td>
+                <td has-authority="ROLE_ADMIN">
+                    {{feedback.user.login}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="feedback-detail({id:feedback.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit" has-only-authority="ROLE_USER"
+                                ui-sref="feedback.edit({id:feedback.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="feedback.delete({id:feedback.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
