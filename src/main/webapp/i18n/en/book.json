@@ -18,7 +18,7 @@
             },
             "action": {
                 "feedback": "Add a feedback",
-                "reservation": ""
+                "reservation": "Order a book"
             },
             "name": "Name",
             "author": "Author",

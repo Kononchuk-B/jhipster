@@ -1,6 +1,6 @@
 
 <div>
-    <h2><span data-translate="libSupportApp.bookReservation.detail.title">Book Reservation</span> {{vm.bookReservation.id}}</h2>
+    <h2><span data-translate="libSupportApp.bookReservation.detail.title">Book Reservation</span> <span has-authority="ROLE_ADMIN">{{vm.bookReservation.id}}</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
@@ -14,7 +14,7 @@
         </dd>
         <dt><span data-translate="libSupportApp.bookReservation.book">Book</span></dt>
         <dd>
-            <a ui-sref="book-detail({id:vm.bookReservation.book.id})">{{vm.bookReservation.book.id}}</a>
+            <a ui-sref="book-detail({id:vm.bookReservation.book.id})">{{vm.bookReservation.book.name}}</a>
         </dd>
         <dt><span data-translate="libSupportApp.bookReservation.user">User</span></dt>
         <dd>

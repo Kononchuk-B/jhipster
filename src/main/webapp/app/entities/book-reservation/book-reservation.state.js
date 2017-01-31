@@ -94,6 +94,9 @@
             data: {
                 authorities: ['ROLE_USER']
             },
+            params: {
+                bookId: null
+            },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
                     templateUrl: 'app/entities/book-reservation/book-reservation-dialog.html',

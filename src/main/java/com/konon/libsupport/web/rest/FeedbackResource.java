@@ -1,11 +1,13 @@
 package com.konon.libsupport.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.konon.libsupport.config.JHipsterProperties;
 import com.konon.libsupport.domain.Feedback;
 import com.konon.libsupport.repository.FeedbackRepository;
 import com.konon.libsupport.security.AuthoritiesConstants;
 import com.konon.libsupport.security.SecurityUtils;
 import com.konon.libsupport.service.FeedbackService;
+import com.konon.libsupport.web.rest.errors.ErrorConstants;
 import com.konon.libsupport.web.rest.util.HeaderUtil;
 import com.konon.libsupport.web.rest.util.PaginationUtil;
 
@@ -18,7 +20,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -80,10 +84,16 @@ public class FeedbackResource {
         if (feedback.getId() == null) {
             return createFeedback(feedback);
         }
-        Feedback result = feedbackService.save(feedback);
-        return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert("feedback", feedback.getId().toString()))
-            .body(result);
+        String feedbackLogin = feedback.getUser().getLogin();
+        return Optional.of(feedback)
+            .filter(result -> feedbackLogin.equals(SecurityUtils.getCurrentUserLogin()))
+            .map(result -> {
+                feedbackService.save(result);
+                return ResponseEntity.ok()
+                    .headers(HeaderUtil.createEntityUpdateAlert("feedback", feedback.getId().toString()))
+                    .body(result);
+            })
+            .orElseThrow(() -> new AccessDeniedException(ErrorConstants.ERR_ACCESS_DENIED));
     }
 
     /**
@@ -99,7 +109,7 @@ public class FeedbackResource {
         throws URISyntaxException {
         log.debug("REST request to get a page of Feedbacks");
         Page<Feedback> page;
-        if(SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
+        if (SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
             page = feedbackService.findAll(pageable);
         } else {
             page = new PageImpl<>(feedbackRepository.findByUserIsCurrentUser());
@@ -136,8 +146,14 @@ public class FeedbackResource {
     @Timed
     public ResponseEntity<Void> deleteFeedback(@PathVariable Long id) {
         log.debug("REST request to delete Feedback : {}", id);
-        feedbackService.delete(id);
-        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("feedback", id.toString())).build();
+        Feedback currentFeedback = feedbackService.findOne(id);
+        String feedbackLogin = currentFeedback.getUser().getLogin();
+        if (SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN) || feedbackLogin.equals(SecurityUtils.getCurrentUserLogin())) {
+            feedbackService.delete(id);
+            return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("feedback", id.toString())).build();
+        } else {
+            throw new AccessDeniedException(ErrorConstants.ERR_ACCESS_DENIED);
+        }
     }
 
 }

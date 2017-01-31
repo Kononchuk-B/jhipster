@@ -1,8 +1,14 @@
 package com.konon.libsupport.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.konon.libsupport.config.JHipsterProperties;
 import com.konon.libsupport.domain.BookReservation;
+import com.konon.libsupport.domain.Feedback;
+import com.konon.libsupport.repository.BookReservationRepository;
+import com.konon.libsupport.security.AuthoritiesConstants;
+import com.konon.libsupport.security.SecurityUtils;
 import com.konon.libsupport.service.BookReservationService;
+import com.konon.libsupport.web.rest.errors.ErrorConstants;
 import com.konon.libsupport.web.rest.util.HeaderUtil;
 import com.konon.libsupport.web.rest.util.PaginationUtil;
 
@@ -10,10 +16,12 @@ import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -31,9 +39,12 @@ import java.util.Optional;
 public class BookReservationResource {
 
     private final Logger log = LoggerFactory.getLogger(BookReservationResource.class);
-        
+
     @Inject
     private BookReservationService bookReservationService;
+
+    @Inject
+    private BookReservationRepository bookReservationRepository;
 
     /**
      * POST  /book-reservations : Create a new bookReservation.
@@ -71,10 +82,16 @@ public class BookReservationResource {
         if (bookReservation.getId() == null) {
             return createBookReservation(bookReservation);
         }
-        BookReservation result = bookReservationService.save(bookReservation);
-        return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert("bookReservation", bookReservation.getId().toString()))
-            .body(result);
+        String reservationLogin = bookReservation.getUser().getLogin();
+        return Optional.of(bookReservation)
+            .filter(result -> reservationLogin.equals(SecurityUtils.getCurrentUserLogin()))
+            .map(result -> {
+                bookReservationService.save(result);
+                return ResponseEntity.ok()
+                    .headers(HeaderUtil.createEntityUpdateAlert("bookReservation", bookReservation.getId().toString()))
+                    .body(result);
+            })
+            .orElseThrow(() -> new AccessDeniedException(ErrorConstants.ERR_ACCESS_DENIED));
     }
 
     /**
@@ -89,7 +106,12 @@ public class BookReservationResource {
     public ResponseEntity<List<BookReservation>> getAllBookReservations(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of BookReservations");
-        Page<BookReservation> page = bookReservationService.findAll(pageable);
+        Page<BookReservation> page;
+        if(SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
+            page = bookReservationService.findAll(pageable);
+        } else {
+            page = new PageImpl<>(bookReservationRepository.findByUserIsCurrentUser());
+        }
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/book-reservations");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -122,8 +144,14 @@ public class BookReservationResource {
     @Timed
     public ResponseEntity<Void> deleteBookReservation(@PathVariable Long id) {
         log.debug("REST request to delete BookReservation : {}", id);
-        bookReservationService.delete(id);
-        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("bookReservation", id.toString())).build();
+        BookReservation currentReservation = bookReservationService.findOne(id);
+        String reservationLogin = currentReservation.getUser().getLogin();
+        if (SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN) || reservationLogin.equals(SecurityUtils.getCurrentUserLogin())) {
+            bookReservationService.delete(id);
+            return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("bookReservation", id.toString())).build();
+        } else {
+            throw new AccessDeniedException(ErrorConstants.ERR_ACCESS_DENIED);
+        }
     }
 
 }

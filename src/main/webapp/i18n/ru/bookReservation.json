@@ -3,6 +3,7 @@
         "bookReservation" : {
             "home": {
                 "title": "Резервації книг",
+                "user": "Мої резервації книг",
                 "createLabel": "Зарезервувати книгу",
                 "createOrEditLabel": "Редагування резервації",
                 "search": "Знайти резервацію"
