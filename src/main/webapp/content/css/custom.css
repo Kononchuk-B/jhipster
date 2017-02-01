@@ -12,23 +12,23 @@
 }
 
 .close:hover {
-    transform: scale(1.3,1.3);
+    transform: scale(1.3, 1.3);
     color: #2c5e92;
     opacity: 1;
 }
 
-th, td, .title-center{
+th, td, .title-center {
     text-align: center;
 }
 
 .glyphicon-star-empty {
     color: #1c74af;
-    transform: scale(1.3,1.3);
+    transform: scale(1.3, 1.3);
 }
 
 .glyphicon-star {
     color: #fdee2a;
-    transform: scale(1.6,1.6);
+    transform: scale(1.6, 1.6);
 }
 
 .glyphicon-star-empty, .glyphicon-star {
@@ -58,3 +58,45 @@ th, td, .title-center{
 .glyphicon-remove {
     color: #337ab7;
 }
+
+.user-menu {
+    margin-bottom: 14px !important;
+    list-style: none !important;
+    padding-left: 1%;
+}
+
+.user-menu li {
+    width: 300px !important;
+    height: 30px !important;
+    margin: 0 0 7px 0 !important;
+}
+
+.user-menu li a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: medium;
+    font-weight: normal !important;
+    display: block;
+    margin: 0 0 10% 0;
+    color: #2092d6;
+    padding: 2% 0 0 3%;
+    text-decoration: none;
+}
+
+.user-menu li a:hover {
+    font-weight: bold !important;
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.dark-blue {
+    border-left: 4px solid #2B6EA1;
+}
+
+.blue {
+    border-left: 4px solid #438fc8;
+}
+
+.light-blue {
+    border-left: 4px solid #5bc0de;
+}
+
