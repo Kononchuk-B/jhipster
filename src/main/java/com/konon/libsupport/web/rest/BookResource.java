@@ -3,7 +3,9 @@ package com.konon.libsupport.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.konon.libsupport.domain.Book;
 import com.konon.libsupport.security.AuthoritiesConstants;
+import com.konon.libsupport.security.SecurityUtils;
 import com.konon.libsupport.service.BookService;
+import com.konon.libsupport.web.rest.errors.ErrorConstants;
 import com.konon.libsupport.web.rest.util.HeaderUtil;
 import com.konon.libsupport.web.rest.util.PaginationUtil;
 
@@ -11,10 +13,12 @@ import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +28,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * REST controller for managing Book.
@@ -131,4 +136,20 @@ public class BookResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("book", id.toString())).build();
     }
 
+    @GetMapping("/my-books/{login}")
+    @Timed
+    public ResponseEntity<List<Book>> getAllReadedBooks(@PathVariable String login)
+        throws URISyntaxException {
+        log.debug("REST request to get a list of readed Books for current user");
+        if(!SecurityUtils.getCurrentUserLogin().equals(login)) {
+            throw new AccessDeniedException(ErrorConstants.ERR_ACCESS_DENIED);
+        }
+        List<Book> books = bookService.findByBookReservationForUser(login)
+            .stream()
+            .distinct()
+            .collect(Collectors.toList());
+        Page<Book> page = new PageImpl<>(books);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/my-books/{login}");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
 }

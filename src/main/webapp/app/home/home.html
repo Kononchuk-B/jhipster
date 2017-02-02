@@ -5,7 +5,6 @@
         </div>
         <div class="col-md-8">
             <h1 data-translate="home.title">Welcome, Java Hipster!</h1>
-            <!--<p class="lead" data-translate="home.subtitle">This is your homepage</p>-->
 
             <div ng-switch="vm.isAuthenticated()">
                 <div class="alert alert-success" ng-switch-when="true" data-translate="home.logged.message"
@@ -14,7 +13,7 @@
                 </div>
 
                 <ul class="user-menu" has-only-authority="ROLE_USER">
-                    <li><a class="alert-link dark-blue" data-translate="home.user.books" ui-sref="book"></a></li>
+                    <li><a class="alert-link dark-blue" data-translate="home.user.books" ui-sref="my-book({login: vm.account.login})"></a></li>
                     <li><a class="alert-link blue" data-translate="home.user.feedbacks" ui-sref="feedback"></a></li>
                     <li><a class="alert-link light-blue" data-translate="home.user.reservations" ui-sref="book-reservation"></a></li>
                 </ul>

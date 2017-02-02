@@ -21,7 +21,7 @@ import java.util.List;
 public class BookServiceImpl implements BookService{
 
     private final Logger log = LoggerFactory.getLogger(BookServiceImpl.class);
-    
+
     @Inject
     private BookRepository bookRepository;
 
@@ -39,11 +39,11 @@ public class BookServiceImpl implements BookService{
 
     /**
      *  Get all the books.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public Page<Book> findAll(Pageable pageable) {
         log.debug("Request to get all Books");
         Page<Book> result = bookRepository.findAll(pageable);
@@ -56,7 +56,7 @@ public class BookServiceImpl implements BookService{
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public Book findOne(Long id) {
         log.debug("Request to get Book : {}", id);
         Book book = bookRepository.findOneWithEagerRelationships(id);
@@ -72,4 +72,10 @@ public class BookServiceImpl implements BookService{
         log.debug("Request to delete Book : {}", id);
         bookRepository.delete(id);
     }
+
+    @Override
+    public List<Book> findByBookReservationForUser(String login) {
+        return bookRepository.findByBookReservationForUser(login);
+    }
+
 }

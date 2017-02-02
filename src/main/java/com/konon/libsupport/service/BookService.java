@@ -20,7 +20,7 @@ public interface BookService {
 
     /**
      *  Get all the books.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -40,4 +40,6 @@ public interface BookService {
      *  @param id the id of the entity
      */
     void delete(Long id);
+
+    List<Book> findByBookReservationForUser(String login);
 }
