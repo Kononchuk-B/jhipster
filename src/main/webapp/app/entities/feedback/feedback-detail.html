@@ -32,7 +32,7 @@
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
     </button>
 
-    <button type="button" ui-sref="feedback-detail.edit({id:vm.feedback.id})" class="btn btn-primary">
+    <button type="button" ui-sref="feedback-detail.edit({id:vm.feedback.id})" class="btn btn-primary" has-only-authority="ROLE_USER">
         <span class="glyphicon glyphicon-pencil"></span>
         <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
     </button>

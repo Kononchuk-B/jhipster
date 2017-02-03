@@ -100,3 +100,15 @@ th, td, .title-center {
     border-left: 4px solid #5bc0de;
 }
 
+.date-field {
+    max-width: 45%;
+    float: left;
+    margin-left: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.for-date-fields {
+    padding: 0;
+}
+

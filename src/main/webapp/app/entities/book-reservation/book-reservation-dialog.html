@@ -6,14 +6,14 @@
                 ng-click="vm.clear()">&times;</button>
         <h4 class="modal-title" id="myBookReservationLabel" data-translate="libSupportApp.bookReservation.home.createOrEditLabel">Create or edit a Book Reservation</h4>
     </div>
-    <div class="modal-body">
+    <div class="modal-body for-date-fields">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.bookReservation.id">
+        <div has-authority="ROLE_ADMIN" class="form-group" ng-show="vm.bookReservation.id">
             <label for="id" data-translate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.bookReservation.id" readonly />
         </div>
-        <div class="form-group">
+        <div class="form-group date-field">
             <label class="control-label" data-translate="libSupportApp.bookReservation.startDate" for="field_startDate">Start Date</label>
                 <div class="input-group">
                     <input id="field_startDate" type="text" class="form-control" name="startDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.bookReservation.startDate" is-open="vm.datePickerOpenStatus.startDate"
@@ -29,7 +29,7 @@
                 </p>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group date-field">
             <label class="control-label" data-translate="libSupportApp.bookReservation.endDate" for="field_endDate">End Date</label>
                 <div class="input-group">
                     <input id="field_endDate" type="text" class="form-control" name="endDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.bookReservation.endDate" is-open="vm.datePickerOpenStatus.endDate"

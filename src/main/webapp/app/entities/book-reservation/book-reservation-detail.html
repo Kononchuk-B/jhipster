@@ -16,8 +16,8 @@
         <dd>
             <a ui-sref="book-detail({id:vm.bookReservation.book.id})">{{vm.bookReservation.book.name}}</a>
         </dd>
-        <dt><span data-translate="libSupportApp.bookReservation.user">User</span></dt>
-        <dd>
+        <dt has-authority="ROLE_ADMIN"><span data-translate="libSupportApp.bookReservation.user">User</span></dt>
+        <dd has-authority="ROLE_ADMIN">
             {{vm.bookReservation.user.login}}
         </dd>
     </dl>

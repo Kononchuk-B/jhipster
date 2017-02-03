@@ -29,9 +29,13 @@
                 <td has-authority="ROLE_ADMIN"><a ui-sref="feedback-detail({id:feedback.id})">{{feedback.id}}</a></td>
                 <td>{{feedback.stars}}</td>
                 <td>{{feedback.dateOfPublish | date:'mediumDate'}}</td>
-                <td>
+                <td has-only-authority="ROLE_USER">
                     <a ui-sref="book-detail({id:feedback.book.id})">{{feedback.book.name | limitTo: 40 : 0}}<span
                         ng-if="feedback.book.name.length > 40">....</span></a>
+                </td>
+                <td has-authority="ROLE_ADMIN">
+                    <a ui-sref="book-detail({id:feedback.book.id})">{{feedback.book.name | limitTo: 35 : 0}}<span
+                        ng-if="feedback.book.name.length > 35">....</span></a>
                 </td>
                 <td>{{feedback.description | limitTo: 20 : 0 }}<span
                     ng-if="feedback.description.length > 20">....</span></td>
