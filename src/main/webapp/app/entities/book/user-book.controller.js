@@ -1,13 +1,13 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('libSupportApp')
         .controller('UserBookController', UserBookController);
 
-    UserBookController.$inject = ['$scope', '$state', 'UserBook', 'ParseLinks', 'AlertService', 'paginationConstants', '$stateParams'];
+    UserBookController.$inject = ['$scope', '$state', 'UserBook', 'ParseLinks', 'AlertService', 'paginationConstants', '$stateParams', 'Principal', 'User'];
 
-    function UserBookController ($scope, $state, UserBook, ParseLinks, AlertService, paginationConstants, $stateParams) {
+    function UserBookController($scope, $state, UserBook, ParseLinks, AlertService, paginationConstants, $stateParams, Principal, User) {
         var vm = this;
 
         vm.books = [];
@@ -21,9 +21,9 @@
         vm.reset = reset;
         vm.reverse = true;
 
-         loadAll();
+        loadAll();
 
-        function loadAll () {
+        function loadAll() {
             UserBook.query({
                 login: $stateParams.login,
                 page: vm.page,
@@ -51,7 +51,7 @@
             }
         }
 
-        function reset () {
+        function reset() {
             vm.page = 0;
             vm.books = [];
             loadAll();

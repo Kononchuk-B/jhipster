@@ -57,6 +57,9 @@ public class BookReservationResource {
     @Timed
     public ResponseEntity<BookReservation> createBookReservation(@Valid @RequestBody BookReservation bookReservation) throws URISyntaxException {
         log.debug("REST request to save BookReservation : {}", bookReservation);
+        if(SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
+            throw new AccessDeniedException(ErrorConstants.ERR_ACCESS_DENIED);
+        }
         if (bookReservation.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("bookReservation", "idexists", "A new bookReservation cannot already have an ID")).body(null);
         }

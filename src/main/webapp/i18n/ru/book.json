@@ -19,7 +19,8 @@
             },
             "action": {
                 "feedback": "Залишити відгук",
-                "reservation": "Взяти на прочитання"
+                "reservation": "Взяти на прочитання",
+                "reservation-again": "Взяти на прочитання ще раз"
             },
             "name": "Ім'я",
             "author": "Автор",
