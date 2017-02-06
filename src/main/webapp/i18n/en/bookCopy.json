@@ -17,7 +17,8 @@
                 "title": "Book Copy"
             },
             "dateOfSupply": "Date Of Supply",
-            "book": "Book"
+            "book": "Book",
+            "count": "Number of copies"
         }
     }
 }

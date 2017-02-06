@@ -3,11 +3,12 @@
 
     angular
         .module('libSupportApp')
-        .controller('BookCopyDialogController', BookCopyDialogController);
+        .controller('BookCopyDialogController', BookCopyDialogController)
+        .constant('DEFAULT_COUNT', 1);
 
-    BookCopyDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'BookCopy', 'Book'];
+    BookCopyDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'BookCopy', 'Book', 'DEFAULT_COUNT'];
 
-    function BookCopyDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, BookCopy, Book) {
+    function BookCopyDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, BookCopy, Book, DEFAULT_COUNT) {
         var vm = this;
 
         vm.bookCopy = entity;
@@ -16,6 +17,8 @@
         vm.openCalendar = openCalendar;
         vm.save = save;
         vm.books = Book.query();
+        vm.countCopies = DEFAULT_COUNT;
+        vm.clicked = false;
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -26,11 +29,16 @@
         }
 
         function save () {
+            if(!vm.clicked) {
+                return;
+            }
             vm.isSaving = true;
             if (vm.bookCopy.id !== null) {
                 BookCopy.update(vm.bookCopy, onSaveSuccess, onSaveError);
             } else {
-                BookCopy.save(vm.bookCopy, onSaveSuccess, onSaveError);
+                for(var i = 0; i < vm.countCopies; i++) {
+                    BookCopy.save(vm.bookCopy, onSaveSuccess, onSaveError);
+                }
             }
         }
 
