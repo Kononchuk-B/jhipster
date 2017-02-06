@@ -3,8 +3,8 @@
         "bookCopy" : {
             "home": {
                 "title": "Book Copies",
-                "createLabel": "Create a new Book Copy",
-                "createOrEditLabel": "Create or edit a Book Copy",
+                "createLabel": "Create a new book copy",
+                "editLabel": "Edit a book copy",
                 "search": "Search for Book Copy"
             },
             "created": "A new Book Copy is created with identifier <b>{{ param }}</b>",

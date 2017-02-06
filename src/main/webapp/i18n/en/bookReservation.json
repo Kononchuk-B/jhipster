@@ -4,8 +4,8 @@
             "home": {
                 "title": "Book Reservations",
                 "user": "My books' reservations",
-                "createLabel": "Create a new Book Reservation",
-                "createOrEditLabel": "Create or edit a Book Reservation",
+                "createLabel": "Create a new reservation",
+                "editLabel": "Edit a reservation",
                 "search": "Search for Book Reservation"
             },
             "created": "A new Book Reservation is created",

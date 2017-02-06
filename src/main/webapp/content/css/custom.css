@@ -112,3 +112,17 @@ th, td, .title-center {
     padding: 0;
 }
 
+.date-correction {
+    margin-left: 0;
+    max-width: 47.5%;
+    padding-bottom: 0px;
+}
+
+.first-elem {
+    margin-right: 5%;
+}
+
+.center-label {
+    margin-right: 50%;
+}
+

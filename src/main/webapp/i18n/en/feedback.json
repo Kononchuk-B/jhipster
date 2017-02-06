@@ -3,9 +3,9 @@
         "feedback" : {
             "home": {
                 "title": "Feedbacks",
-                "createLabel": "Create a new Feedback",
-                "editLabel": "Edit a Feedback",
-                "search": "Search for Feedback",
+                "createLabel": "Create a new feedback",
+                "editLabel": "Edit a feedback",
+                "search": "Search for feedback",
                 "user" : "My feedbacks"
             },
             "created": "A new Feedback is created",

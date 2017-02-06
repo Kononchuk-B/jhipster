@@ -1,67 +1,78 @@
-
 <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myBookReservationLabel" data-translate="libSupportApp.bookReservation.home.createOrEditLabel">Create or edit a Book Reservation</h4>
+        <h4 class="modal-title" ng-if="vm.bookReservation.id == null" id="myBookReservationCreateLabel"
+            data-translate="libSupportApp.bookReservation.home.createLabel">Create or edit a Book Reservation</h4>
+        <h4 class="modal-title" ng-if="vm.bookReservation.id != null" id="myBookReservationEditLabel"
+            data-translate="libSupportApp.bookReservation.home.editLabel">Create or edit a Book Reservation</h4>
     </div>
     <div class="modal-body for-date-fields">
         <jhi-alert-error></jhi-alert-error>
         <div has-authority="ROLE_ADMIN" class="form-group" ng-show="vm.bookReservation.id">
             <label for="id" data-translate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.bookReservation.id" readonly />
+                   ng-model="vm.bookReservation.id" readonly/>
         </div>
         <div class="form-group date-field">
-            <label class="control-label" data-translate="libSupportApp.bookReservation.startDate" for="field_startDate">Start Date</label>
-                <div class="input-group">
-                    <input id="field_startDate" type="text" class="form-control" name="startDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.bookReservation.startDate" is-open="vm.datePickerOpenStatus.startDate"
-                    required/>
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+            <label class="control-label" data-translate="libSupportApp.bookReservation.startDate" for="field_startDate">Start
+                Date</label>
+            <div class="input-group">
+                <input id="field_startDate" type="text" class="form-control" name="startDate"
+                       uib-datepicker-popup="{{dateformat}}" ng-model="vm.bookReservation.startDate"
+                       is-open="vm.datePickerOpenStatus.startDate"
+                       required/>
+                <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
                     </span>
-                </div>
+            </div>
             <div ng-show="editForm.startDate.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.startDate.$error.required" data-translate="entity.validation.required">
+                   ng-show="editForm.startDate.$error.required" data-translate="entity.validation.required">
                     This field is required.
                 </p>
             </div>
         </div>
         <div class="form-group date-field">
-            <label class="control-label" data-translate="libSupportApp.bookReservation.endDate" for="field_endDate">End Date</label>
-                <div class="input-group">
-                    <input id="field_endDate" type="text" class="form-control" name="endDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.bookReservation.endDate" is-open="vm.datePickerOpenStatus.endDate"
-                    required/>
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+            <label class="control-label" data-translate="libSupportApp.bookReservation.endDate" for="field_endDate">End
+                Date</label>
+            <div class="input-group">
+                <input id="field_endDate" type="text" class="form-control" name="endDate"
+                       uib-datepicker-popup="{{dateformat}}" ng-model="vm.bookReservation.endDate"
+                       is-open="vm.datePickerOpenStatus.endDate"
+                       required/>
+                <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
                     </span>
-                </div>
+            </div>
             <div ng-show="editForm.endDate.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.endDate.$error.required" data-translate="entity.validation.required">
+                   ng-show="editForm.endDate.$error.required" data-translate="entity.validation.required">
                     This field is required.
                 </p>
             </div>
         </div>
 
         <!--<div class="form-group">-->
-            <!--<label data-translate="libSupportApp.bookReservation.book" for="field_book">Book</label>-->
-            <!--<select class="form-control" id="field_book" name="book" ng-model="vm.bookReservation.book" ng-options="book as book.id for book in vm.books track by book.id" required>-->
-                <!--<option value=""></option>-->
-            <!--</select>-->
+        <!--<label data-translate="libSupportApp.bookReservation.book" for="field_book">Book</label>-->
+        <!--<select class="form-control" id="field_book" name="book" ng-model="vm.bookReservation.book" ng-options="book as book.id for book in vm.books track by book.id" required>-->
+        <!--<option value=""></option>-->
+        <!--</select>-->
         <!--</div>-->
         <!--<div ng-show="editForm.book.$invalid">-->
-            <!--<p class="help-block"-->
-                <!--ng-show="editForm.book.$error.required" data-translate="entity.validation.required">-->
-                <!--This field is required.-->
-            <!--</p>-->
+        <!--<p class="help-block"-->
+        <!--ng-show="editForm.book.$error.required" data-translate="entity.validation.required">-->
+        <!--This field is required.-->
+        <!--</p>-->
         <!--</div>-->
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+            data-translate="entity.action.cancel">Cancel</span>
         </button>
         <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
             <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
