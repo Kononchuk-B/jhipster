@@ -2,6 +2,7 @@
     "settings": {
         "title": "Налаштування",
         "form": {
+            "login": "Користувач",
             "firstname": "Ім'я",
             "firstname.placeholder": "Ваше ім'я",
             "lastname": "Прізвище",

@@ -6,7 +6,7 @@
                 "createLabel": "Create a new Book",
                 "editLabel": "Edit a Book",
                 "search": "Search for Book",
-                "user-title": "Мої книги"
+                "user-title": "My books"
             },
             "created": "A new Book is created with identifier <b>{{ param }}</b>",
             "updated": "A Book with identifier <b>{{ param }}</b> is updated ",

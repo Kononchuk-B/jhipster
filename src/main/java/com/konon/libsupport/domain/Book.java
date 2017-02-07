@@ -42,7 +42,8 @@ public class Book implements Serializable {
     @Column(name = "year_of_publish")
     private LocalDate yearOfPublish;
 
-    @Column(name = "is_available")
+    @NotNull
+    @Column(name = "is_available", columnDefinition = "default false")
     private Boolean isAvailable;
 
     @OneToMany(mappedBy = "book")

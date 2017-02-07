@@ -2,6 +2,7 @@
     "settings": {
         "title": "User settings",
         "form": {
+            "login": "Користувач",
             "firstname": "First Name",
             "firstname.placeholder": "Your first name",
             "lastname": "Last Name",

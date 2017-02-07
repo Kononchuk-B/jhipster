@@ -29,13 +29,23 @@
             <span>{{vm.book.isAvailable}}</span>
         </dd>
         <dt><span data-translate="libSupportApp.book.genre">Genre</span></dt>
-        <dd>
+        <dd has-only-authority="ROLE_USER">
+            <span ng-repeat="genre in vm.book.genres">
+                {{genre.type}}{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dd has-authority="ROLE_ADMIN">
             <span ng-repeat="genre in vm.book.genres">
                 <a ui-sref="genre-detail({id: genre.id})">{{genre.type}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
         <dt><span data-translate="libSupportApp.book.category">Category</span></dt>
-        <dd>
+        <dd has-only-authority="ROLE_USER">
+            <span ng-repeat="category in vm.book.categories">
+                {{category.type}}{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dd has-authority="ROLE_ADMIN">
             <span ng-repeat="category in vm.book.categories">
                 <a ui-sref="category-detail({id: category.id})">{{category.type}}</a>{{$last ? '' : ', '}}
             </span>
