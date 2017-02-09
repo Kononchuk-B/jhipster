@@ -33,10 +33,10 @@ public class BookServiceImpl implements BookService{
      * @param book the entity to save
      * @return the persisted entity
      */
+    @Override
     public Book save(Book book) {
         log.debug("Request to save Book : {}", book);
-        Book result = bookRepository.saveAndFlush(book);
-        return result;
+        return bookRepository.saveAndFlush(book);
     }
 
     /**
@@ -47,16 +47,16 @@ public class BookServiceImpl implements BookService{
      */
     @Transactional(readOnly = true)
     public Page<Book> findAll(Pageable pageable) {
-        log.debug("Request to get all Books");
-        Page<Book> result = bookRepository.findAll(pageable);
-        return result;
+        log.debug("Request to get page of all Books");
+        return bookRepository.findAll(pageable);
     }
 
+    @Transactional(readOnly = true)
     @Override
-    public List<Book> checkAllForAvailability() {
-        return bookRepository.findAll().stream()
-            .map(book -> book.setIsAvailable(!book.getBookCopies().isEmpty()))
-            .collect(Collectors.toList());
+    public List<Book> findAll() {
+        log.debug("Request to get all Books");
+        List<Book> books = bookRepository.findAll();
+        return checkForAvailability(books);
     }
 
     /**
@@ -84,7 +84,16 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public List<Book> findByBookReservationForUser(String login) {
-        return bookRepository.findByBookReservationForUser(login);
+        List<Book> booksForUser =  bookRepository.findByBookReservationForUser(login);
+        return checkForAvailability(booksForUser);
+    }
+
+    @Override
+    public List<Book> checkForAvailability(List<Book> books) {
+        log.debug("Checking books for availability");
+        return books.stream()
+            .map(book -> book.setIsAvailable(!book.getBookCopies().isEmpty()))
+            .collect(Collectors.toList());
     }
 
 }

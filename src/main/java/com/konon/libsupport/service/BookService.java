@@ -26,7 +26,9 @@ public interface BookService {
      */
     Page<Book> findAll(Pageable pageable);
 
-    List<Book> checkAllForAvailability();
+    List<Book> findAll();
+
+    List<Book> checkForAvailability(List<Book> books);
 
     /**
      *  Get the "id" book.
