@@ -21,7 +21,7 @@ import java.util.List;
 public class BookCopyServiceImpl implements BookCopyService{
 
     private final Logger log = LoggerFactory.getLogger(BookCopyServiceImpl.class);
-    
+
     @Inject
     private BookCopyRepository bookCopyRepository;
 
@@ -33,17 +33,17 @@ public class BookCopyServiceImpl implements BookCopyService{
      */
     public BookCopy save(BookCopy bookCopy) {
         log.debug("Request to save BookCopy : {}", bookCopy);
-        BookCopy result = bookCopyRepository.save(bookCopy);
+        BookCopy result = bookCopyRepository.saveAndFlush(bookCopy);
         return result;
     }
 
     /**
      *  Get all the bookCopies.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public Page<BookCopy> findAll(Pageable pageable) {
         log.debug("Request to get all BookCopies");
         Page<BookCopy> result = bookCopyRepository.findAll(pageable);
@@ -56,7 +56,7 @@ public class BookCopyServiceImpl implements BookCopyService{
      *  @param id the id of the entity
      *  @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public BookCopy findOne(Long id) {
         log.debug("Request to get BookCopy : {}", id);
         BookCopy bookCopy = bookCopyRepository.findOne(id);

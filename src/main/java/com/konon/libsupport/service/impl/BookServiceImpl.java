@@ -11,7 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for managing Book.
@@ -33,7 +35,7 @@ public class BookServiceImpl implements BookService{
      */
     public Book save(Book book) {
         log.debug("Request to save Book : {}", book);
-        Book result = bookRepository.save(book);
+        Book result = bookRepository.saveAndFlush(book);
         return result;
     }
 
@@ -48,6 +50,13 @@ public class BookServiceImpl implements BookService{
         log.debug("Request to get all Books");
         Page<Book> result = bookRepository.findAll(pageable);
         return result;
+    }
+
+    @Override
+    public List<Book> checkAllForAvailability() {
+        return bookRepository.findAll().stream()
+            .map(book -> book.setIsAvailable(!book.getBookCopies().isEmpty()))
+            .collect(Collectors.toList());
     }
 
     /**

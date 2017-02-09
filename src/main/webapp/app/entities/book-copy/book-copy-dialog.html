@@ -38,12 +38,19 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-if="vm.bookCopy.id == null">
             <label class="center-label" data-translate="libSupportApp.bookCopy.book" for="field_book">Book</label>
-            <select class="form-control" id="field_book" name="book" ng-model="vm.bookCopy.book"
+            <select class="form-control" id="field_book" name="book"
+                    ng-model="vm.bookCopy.book"
                     ng-options="book as book.name for book in vm.books track by book.id" required>
                 <option value=""></option>
             </select>
+        </div>
+        <div ng-if="vm.bookCopy.id != null">
+            <label class="center-label" data-translate="libSupportApp.bookCopy.book"
+                   for="field_book_readonly">Book</label>
+            <input type="text" id="field_book_readonly" class="form-control" name="book"
+                   ng-model="vm.bookCopy.book.name" readonly/>
         </div>
         <div ng-show="editForm.book.$invalid">
             <p class="help-block"

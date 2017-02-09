@@ -98,7 +98,7 @@ public class BookResource {
     public ResponseEntity<List<Book>> getAllBooks(@ApiParam Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Books");
-        Page<Book> page = bookService.findAll(pageable);
+        Page<Book> page = new PageImpl<>(bookService.checkAllForAvailability(), pageable, bookService.checkAllForAvailability().size());
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/books");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

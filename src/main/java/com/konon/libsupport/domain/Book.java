@@ -1,8 +1,11 @@
 package com.konon.libsupport.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.konon.libsupport.domain.listener.BookEntityListener;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -16,6 +19,7 @@ import java.util.Objects;
  * A Book.
  */
 @Entity
+@EntityListeners(BookEntityListener.class)
 @Table(name = "book")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Book implements Serializable {
@@ -42,23 +46,20 @@ public class Book implements Serializable {
     @Column(name = "year_of_publish")
     private LocalDate yearOfPublish;
 
-    @NotNull
-    @Column(name = "is_available", columnDefinition = "default false")
+    @Column(name = "is_available")
     private Boolean isAvailable;
 
     @OneToMany(mappedBy = "book")
     @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<BookReservation> bookReservations = new HashSet<>();
 
-    @OneToMany(mappedBy = "book")
+    @NotFound(action = NotFoundAction.IGNORE)
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<BookCopy> bookCopies = new HashSet<>();
 
     @OneToMany(mappedBy = "book")
     @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Feedback> feedbacks = new HashSet<>();
 
     @ManyToMany
@@ -148,7 +149,7 @@ public class Book implements Serializable {
         this.yearOfPublish = yearOfPublish;
     }
 
-    public Boolean isIsAvailable() {
+    public Boolean getIsAvailable() {
         return isAvailable;
     }
 
@@ -157,9 +158,11 @@ public class Book implements Serializable {
         return this;
     }
 
-    public void setIsAvailable(Boolean isAvailable) {
+    public Book setIsAvailable(Boolean isAvailable) {
         this.isAvailable = isAvailable;
+        return this;
     }
+
 
     public Set<BookReservation> getBookReservations() {
         return bookReservations;

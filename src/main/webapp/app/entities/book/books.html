@@ -47,9 +47,14 @@
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
                             </button>
-                            <button type="submit" has-only-authority="ROLE_USER"
+                            <button ng-if="book.isAvailable" type="submit" has-only-authority="ROLE_USER"
                                     ui-sref="book-reservation.new({bookId: book.id})"
                                     class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-bookmark"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="libSupportApp.book.action.reservation"></span>
+                            </button>
+                            <button ng-if="!book.isAvailable" type="submit" has-only-authority="ROLE_USER"
+                                    class="btn btn-primary btn-sm" disabled>
                                 <span class="glyphicon glyphicon-bookmark"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="libSupportApp.book.action.reservation"></span>
                             </button>

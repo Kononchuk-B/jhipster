@@ -130,7 +130,7 @@ public class BookResourceIntTest {
         assertThat(testBook.getEdition()).isEqualTo(DEFAULT_EDITION);
         assertThat(testBook.getNumberOfPages()).isEqualTo(DEFAULT_NUMBER_OF_PAGES);
         assertThat(testBook.getYearOfPublish()).isEqualTo(DEFAULT_YEAR_OF_PUBLISH);
-        assertThat(testBook.isIsAvailable()).isEqualTo(DEFAULT_IS_AVAILABLE);
+        assertThat(testBook.getIsAvailable()).isEqualTo(DEFAULT_IS_AVAILABLE);
     }
 
     @Test
@@ -249,7 +249,7 @@ public class BookResourceIntTest {
         assertThat(testBook.getEdition()).isEqualTo(UPDATED_EDITION);
         assertThat(testBook.getNumberOfPages()).isEqualTo(UPDATED_NUMBER_OF_PAGES);
         assertThat(testBook.getYearOfPublish()).isEqualTo(UPDATED_YEAR_OF_PUBLISH);
-        assertThat(testBook.isIsAvailable()).isEqualTo(UPDATED_IS_AVAILABLE);
+        assertThat(testBook.getIsAvailable()).isEqualTo(UPDATED_IS_AVAILABLE);
     }
 
     @Test
